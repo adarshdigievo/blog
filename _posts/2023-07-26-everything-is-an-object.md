@@ -1,5 +1,5 @@
 ---
-title:  It is said that, in Python everything is an object. I took that statement literally.
+title:  It is said that, in Python everything is an object. I took that literally.
 date: 2023-07-26 22:27:11 +05:30
 categories: [Python, meta]
 tags: [python, metaprogramming, object]     # TAG names should always be lowercase
