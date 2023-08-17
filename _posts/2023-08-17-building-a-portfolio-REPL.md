@@ -102,7 +102,7 @@ The website had some weird input issues on Chrome-based Android browsers while t
 
 - Pyscript
 
-[Pyscript](pyscript.net/) as their tagline says is 'Programming for the 99%'. Pyscript makes it a lot easier to deploy an application with no manual configuration steps needed like pip installs and can be easily hosted as a static site. It is Python for the front end and will be well-suited for data applications (visualizations, graphics, etc).
+[Pyscript](https://pyscript.net/) as their tagline says is 'Programming for the 99%'. Pyscript makes it a lot easier to deploy an application with no manual configuration steps needed like pip installs and can be easily hosted as a static site. It is Python for the front end and will be well-suited for data applications (visualizations, graphics, etc).
 
 - Pyodide
 
