@@ -17,7 +17,7 @@ From Wikipedia:
 >Race conditions can occur especially in logic circuits, multithreaded, or distributed software programs.
 
 
-For an example of a race condition on a real-world web app, see this disclosed security bug: https://hackerone.com/reports/759247
+For an example of a race condition on a real-world web app, see this disclosed security bug: [https://hackerone.com/reports/759247](https://hackerone.com/reports/759247)
 
 Here the hacker could redeem a gift card (intended for single use) multiple times.
 
@@ -58,13 +58,13 @@ count = 0
 
 
 def increase_counter():
-global count
-for i in range(1000):
-count += 1
+    global count
+    for i in range(1000):
+    count += 1
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-for _ in range(10_000):
-executor.submit(increase_counter)
+    for _ in range(10_000):
+        executor.submit(increase_counter)
 
 print(F"{count=}")
 ```
@@ -107,10 +107,10 @@ Below is a commonly used example for a Singleton class in Python:
 
 ```python
 class SingletonClass:
-def __new__(cls):
-if not hasattr(cls, 'instance'):
-cls.instance = super(SingletonClass, cls).__new__(cls)
-return cls.instance
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(SingletonClass, cls).__new__(cls)
+        return cls.instance
 
 
 obj1 = SingletonClass()
@@ -129,12 +129,12 @@ In the above example, it is possible because two threads can evaluate the `if` c
 from concurrent import futures
 
 def printer():
-print('testing thread safety of print')
+    print('testing thread safety of print')
 
 
 with futures.ThreadPoolExecutor(max_workers=10) as executor:
-for _ in range(10):
-executor.submit(printer)
+    for _ in range(10):
+        executor.submit(printer)
 ```
 
 Output can vary from expected:
@@ -215,7 +215,7 @@ is equivalent to:
 lock = Threading.Lock()
 
 with lock:
-num += 1
+    num += 1
 ```
 
 #### Thread safe counter implementation
@@ -233,23 +233,23 @@ lock = Lock()
 
 
 def increase_counter():
-global count
-for i in range(1000):
+    global count
+    for i in range(1000):
 
-lock.acquire()
-count += 1
-lock.release()
+        lock.acquire()
+        count += 1
+        lock.release()
 
-"""
-or:
-with lock:
-count += 1
-"""
+        """
+        or:
+        with lock:
+        count += 1
+        """
 
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-for _ in range(10_000):
-executor.submit(increase_counter)
+    for _ in range(10_000):
+        executor.submit(increase_counter)
 
 print(F"{count=}") # count=10000000, for all executions
 ```
@@ -293,13 +293,13 @@ from threading import Lock
 lock = Lock()
 
 def printer():
-with lock:
-print('testing thread safety of print')
+    with lock:
+        print('testing thread safety of print')
 
 
 with futures.ThreadPoolExecutor(max_workers=10) as executor:
-for _ in range(100):
-executor.submit(printer)
+    for _ in range(100):
+        executor.submit(printer)
 
 ```
 
@@ -348,7 +348,7 @@ import requests
 
 
 def make_request():
-return requests.get("https://reqres.in/api/users?delay=3")
+    return requests.get("https://reqres.in/api/users?delay=3")
 
 
 start = time.perf_counter()
@@ -390,8 +390,8 @@ import time
 import requests
 
 
-def make_request():
-return sum(range(100000000))
+def make_request(): 
+    return sum(range(100000000))
 
 
 start = time.perf_counter()
@@ -426,9 +426,9 @@ count = 0
 
 
 def increase_counter():
-global count
-for i in range(1000):
-count += 1
+    global count
+    for i in range(1000):
+        count += 1
 
 dis.dis(increase_counter)
 ```
@@ -477,11 +477,11 @@ We can see that INPLACE_ADD opcode has been replaced with BINARY_OP in Python 3.
 
 ## References
 
-Medium article by Jordan Gillard: https://medium.com/analytics-vidhya/how-to-create-a-thread-safe-singleton-class-in-python-822e1170a7f6
+[Medium article by Jordan Gillard](https://medium.com/analytics-vidhya/how-to-create-a-thread-safe-singleton-class-in-python-822e1170a7f6)
 
-RealPython Article on Threading: https://realpython.com/intro-to-python-threading/#working-with-many-threads
+[RealPython Article on Threading](https://realpython.com/intro-to-python-threading/#working-with-many-threads)
 
-Article by Saurabh Chaturvedi: https://betterprogramming.pub/synchronization-primitives-in-python-564f89fee732
+[Article by Saurabh Chaturvedi](https://betterprogramming.pub/synchronization-primitives-in-python-564f89fee732)
 
-Superfastpython - Thread Safe print: https://superfastpython.com/thread-safe-print-in-python/
+[Superfastpython - Thread Safe print](https://superfastpython.com/thread-safe-print-in-python/)
 
