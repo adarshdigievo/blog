@@ -60,7 +60,7 @@ count = 0
 def increase_counter():
     global count
     for i in range(1000):
-    count += 1
+        count += 1
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
     for _ in range(10_000):
@@ -173,7 +173,7 @@ The simple lock is not aware of the current locking thread and this can lead to 
 import threading
 
 num = 0
-lock = Threading.Lock()
+lock = threading.Lock()
 
 lock.acquire()
 num += 1
@@ -185,7 +185,7 @@ lock.release()
 ```python
 
 # With RLock, that problem doesn't happen.
-lock = Threading.RLock()
+lock = threading.RLock()
 
 lock.acquire()
 num += 3
@@ -202,7 +202,7 @@ For brevity, let's skip the other primitives (Semaphore & Barrier, Events & Cond
 Lock acquisition and release can be managed using context managers.
 
 ```python
-lock = Threading.Lock()
+lock = threading.Lock()
 
 lock.acquire()
 num += 1
@@ -212,7 +212,7 @@ lock.release()
 is equivalent to:
 
 ```python
-lock = Threading.Lock()
+lock = threading.Lock()
 
 with lock:
     num += 1
@@ -224,8 +224,6 @@ We can use a lock at places of code where race conditions(simultaneous modificat
 
 ```python
 import concurrent.futures
-import dis
-import time
 from threading import Lock
 
 count = 0
@@ -243,7 +241,7 @@ def increase_counter():
         """
         or:
         with lock:
-        count += 1
+            count += 1
         """
 
 
@@ -258,6 +256,9 @@ print(F"{count=}") # count=10000000, for all executions
 #### Thread-safe singleton implementation
 
 ```python
+import threading
+
+
 class Singleton:
   _instance = None
   _lock = threading.Lock()
@@ -265,11 +266,10 @@ class Singleton:
   def __new__(cls):
       if cls._instance is None:
         with cls._lock:
-
           if cls._instance is None:
               cls._instance = super().__new__(cls)
           
-    return cls._instance
+      return cls._instance
 ```
 
 After acquiring the lock (using `with`), we are rechecking the presence of an instance to prevent the below-race condition.
@@ -387,17 +387,16 @@ Using threads:
 ```python
 import threading
 import time
-import requests
 
 
-def make_request(): 
+def perform_computation(): 
     return sum(range(100000000))
 
 
 start = time.perf_counter()
 
-t1 = threading.Thread(target=make_request)
-t2 = threading.Thread(target=make_request)
+t1 = threading.Thread(target=perform_computation)
+t2 = threading.Thread(target=perform_computation)
 
 t1.start()
 t2.start()
