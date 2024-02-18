@@ -1,5 +1,5 @@
 ---
-title: Thread Local Storage in Python
+title: Thread Local Data in Python
 date: 2024-02-18 16:59:00 +05:30
 categories: [Python, Snippets, threading]
 tags: [python, threading]     # TAG names should always be lowercase
