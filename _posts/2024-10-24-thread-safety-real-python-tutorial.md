@@ -21,7 +21,7 @@ class SingletonClass(object):
     return cls.instance
 ```
 
-The SingleTonClass is supposed to have only 1 object, but the code can lead to the creation of more than one instances
+The `SingletonClass` is supposed to have only 1 object, but the code can lead to the creation of more than one instances
 when executed in a multithreaded environment.
 
 Read the tutorial to spot such race conditions and learn to fix them using Python's synchronization primitives.
