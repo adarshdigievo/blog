@@ -1,0 +1,172 @@
+---
+title: Will AI Replace Junior Developers? I Asked Experts at Pycon US
+date: 2025-06-16 19:20:00 +05:30
+categories: [ Python, Pycon ]
+tags: [ python, events, pycon, ai ]     # TAG names should always be lowercase
+---
+
+At this year’s PyCon US, I decided to try something different. I skipped most of the talks and focused on the hallway track- just walking around, meeting people, and asking questions.
+
+I attended Pycon US in Pittsburgh - This was my first in-person Pycon US.
+
+I was also presenting a poster at PyCon - on using Python to improve at chess. [Link](https://github.com/adarshdigievo/talks/tree/main/Pycon%20US%2025%20-%20Improving%20in%20Chess)
+
+Before the conference, I had prepared a few questions I wanted to ask Python experts:
+
+- What do you think is the future of programming?
+  
+- Will AI take over programming jobs in the next 2–3 years?
+  
+- What AI tools do you use in your daily work?
+  
+- What advice do you have for Python developers?
+  
+
+Most of the people I talked to are familiar names in the Python community. I’ve read their blog posts, watched their talks, or used their open-source tools. There were many more people I wish I had a chance to talk to, but I’m glad I got to speak with the ones I did.
+
+One thing surprised me - very few people said AI will replace developers. I expected more.
+
+Later I realized why. Most of the folks I spoke to are working on deep, core programming problems - like optimizing CPython, or building dev tools. These are areas where current AI tools aren’t that useful. LLMs haven’t seen much of that code. So maybe it’s not that surprising after all.
+
+Here’s what they said:
+
+---
+
+## Guido van Rossum
+
+Guido said AI won’t replace programmers.
+
+He’s not a fan of "vibe coding" (letting AI write code you don’t understand). 
+But he does use GitHub Copilot. He expects AI assistants to get much better in the future - something like a supercharged Copilot.
+
+---
+
+## Anthony Shaw — Python Core Dev
+
+Anthony said AI is like the new Stack Overflow.
+
+Earlier, people copied code from blogs or seniors. Now it’s from ChatGPT.  
+AI is useful for boilerplate or things you already know. He uses **Copilot Chat** for regular stuff and **agent mode** when he’s working on something unfamiliar (like frontend work).
+
+His advice: *Don’t blindly rely on AI*. If you don’t keep learning, the gap between juniors and seniors will grow fast.
+
+[Anthony's Website](https://tonybaloney.github.io/) · [My favorite project – VSCode Pets](https://tonybaloney.github.io/vscode-pets/)
+
+---
+
+## Anthony Sottile
+
+He doesn’t use AI tools.
+
+He said his problems are too complex for AI. It’s easier for him to just write the code than explain it to a chatbot.
+
+He does agree that AI is good for boring or repetitive code.
+
+[GitHub](https://github.com/asottile) · [YouTube – Anthony Writes Code](https://www.youtube.com/c/anthonywritescode)
+
+---
+
+## Reuven M. Lerner - Python Author & Trainer
+
+Reuven said companies should *not* replace junior devs.
+
+He said juniors are like seeds. If companies don’t invest in them now, they’ll struggle later when they only have senior devs and AI bots.
+
+He uses AI mostly for writing—like reviewing posts or generating images. He rarely uses it for coding.
+
+[Website – lerner.co.il](https://lerner.co.il/) · Great courses and newsletters for Python devs
+
+---
+
+## Trey Hunner — Python Morsels
+
+Trey said AI won’t replace developers.
+
+But it might change how we work.  
+Developers might end up reading and reviewing more code instead of writing everything from scratch.
+
+He doesn’t use Copilot or coding tools. He copies from ChatGPT when needed and uses a tool called Typingmind to talk to AI.
+
+[Website](https://treyhunner.com/) · [Python Morsels](https://www.pythonmorsels.com/)
+
+It is also worth a mention that Trey taught us the [Cabo card game](https://treyhunner.com/2015/06/cabo-card-game/) during the evenings after PyCon.
+
+---
+
+## Samuel Colvin — Founder of Pydantic
+
+Samuel had a different view.  
+He said AI *will* replace some programmers.
+
+Companies will use AI to do more with fewer people.  
+He sees AI as a way to speed things up and make work more efficient.
+
+He uses tools like `trae`, `cline`, and others to boost his workflow.
+
+[Website](https://scolvin.com/) · [GitHub](https://github.com/samuelcolvin)
+
+---
+
+## Simon Willison — Django co-creator, Creator of Datasette
+
+Simon said AI won’t replace developers. But it will create new types of work and improve productivity.
+
+He uses Claude, ChatGPT, and his own LLM CLI tool.  
+For personal scripts, he uses AI to get things done quickly, and reviews the code properly when it matters.
+
+[Website](https://simonwillison.net/) · [GitHub](https://github.com/simonw)
+
+---
+
+## Mariatta Wijaya — Python Core Developer
+
+Mariatta said AI is more helpful for senior developers.
+
+Seniors can use AI to write code quickly and then fix what’s wrong.  
+For juniors, it depends. If the task is small, AI can help. But juniors still need to understand what the code does.
+
+She uses Copilot in her daily work.
+
+She also recommends this talk from PyTexas:  
+[Heather's Talk – How to Think Like a Senior Engineer](https://www.youtube.com/watch?v=FP9VoFPJsiQ)
+[Mariatta's Website](https://mariatta.ca/) · [GitHub](https://github.com/mariatta)
+
+---
+
+## Final Thoughts
+
+Most Python people agree: AI won’t replace developers anytime soon.
+
+My thoughts: it *will* definitely change how we work.
+
+If you’re using AI without understanding, you’ll likely fall behind.  
+If you keep learning and adapt, you’ll do fine.
+
+---
+
+### My personal favorite moment
+
+One of the highlights of PyCon US for me was meeting **Paul Everitt**.
+
+He gave me a sneak peek of the Python documentary trailer *before* it was released on YouTube. And even better—he handed me a **chocolate Cornetto** from the PyCharm booth while telling stories. Instant core memory.
+
+Paul is one of the most enthusiastic and genuine people I met at the conference. A natural storyteller.
+
+A few things I didn’t know about him until then:
+
+- He managed [navy.mil](https://www.navy.mil) while serving in the U.S. military—one of the earliest websites on the internet.
+  
+- He was a keynote speaker at the **first-ever Python conference** in 1994.
+  
+- He helped **incorporate the Python Software Foundation**.
+  
+- He was Guido’s manager during his Plone days.
+  
+- He joined the PyCharm team in 2015 and is now the Head of Developer Advocacy at JetBrains.
+  
+
+The kind of person you meet once and never forget.
+
+---
+
+That's all from my hallway track this year.
