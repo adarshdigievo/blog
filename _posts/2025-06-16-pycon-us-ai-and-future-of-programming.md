@@ -1,17 +1,16 @@
 ---
 title: Will AI Replace Junior Developers? I Asked Experts at Pycon US
-date: 2025-06-16 19:20:00 +05:30
+date: 2025-06-17 19:20:00 +05:30
 categories: [ Python, Pycon ]
 tags: [ python, events, pycon, ai ]     # TAG names should always be lowercase
 ---
-
-At this year’s PyCon US, I decided to try something different. I skipped most of the talks and focused on the hallway track- just walking around, meeting people, and asking questions.
-
 I attended Pycon US in Pittsburgh - This was my first in-person Pycon US.
+
+At this PyCon, I decided to try something different. I skipped most of the talks and focused on the hallway track - just walking around, meeting people, and asking questions.
 
 I was also presenting a poster at PyCon - on using Python to improve at chess. [Link](https://github.com/adarshdigievo/talks/tree/main/Pycon%20US%2025%20-%20Improving%20in%20Chess)
 
-Before the conference, I had prepared a few questions I wanted to ask Python experts:
+Before the conference, I had prepared a few questions I wanted to ask the Python people:
 
 - What do you think is the future of programming?
   
@@ -41,7 +40,7 @@ But he does use GitHub Copilot. He expects AI assistants to get much better in t
 
 ---
 
-## Anthony Shaw — Python Core Dev
+## Anthony Shaw — PSF Fellow, Author of CPython Internals
 
 Anthony said AI is like the new Stack Overflow.
 
@@ -54,7 +53,7 @@ His advice: *Don’t blindly rely on AI*. If you don’t keep learning, the gap 
 
 ---
 
-## Anthony Sottile
+## Anthony Sottile - Maintainer of pre-commit, flake8, and pytest
 
 He doesn’t use AI tools.
 
