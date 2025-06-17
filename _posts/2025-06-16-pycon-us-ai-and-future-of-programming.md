@@ -1,6 +1,6 @@
 ---
 title: Will AI Replace Junior Developers? I Asked Experts at Pycon US
-date: 2025-06-17 19:20:00 +05:30
+date: 2025-06-16 19:20:00 +05:30
 categories: [ Python, Pycon ]
 tags: [ python, events, pycon, ai ]     # TAG names should always be lowercase
 ---
@@ -8,7 +8,7 @@ I attended Pycon US in Pittsburgh - This was my first in-person Pycon US.
 
 At this PyCon, I decided to try something different. I skipped most of the talks and focused on the hallway track - just walking around, meeting people, and asking questions.
 
-I was also presenting a poster at PyCon - on using Python to improve at chess. [Link](https://github.com/adarshdigievo/talks/tree/main/Pycon%20US%2025%20-%20Improving%20in%20Chess)
+I was also presenting a poster at PyCon - on using Python to improve at chess. [Get the materials for the presentation here.](https://github.com/adarshdigievo/talks/tree/main/Pycon%20US%2025%20-%20Improving%20in%20Chess)
 
 Before the conference, I had prepared a few questions I wanted to ask the Python people:
 
