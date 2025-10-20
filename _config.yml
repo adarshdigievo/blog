@@ -19,7 +19,7 @@ timezone: Asia/Kolkata
 
 title: Blog | Adarsh Divakaran # the main title
 
-tagline: 💚 Python & 🍕 | Currently building <a href="https://digievolabs.com">Digievo Labs</a> # it will display as the sub-title
+tagline: 💚 Python & 🍕 | </br> Get my book <a href="https://deepdivepython.com"> <u>Deep Dive Python </u>🔗</a> — learn advanced Python concepts straight from real open-source code. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Tech blog of Adarsh Divakaran
@@ -169,7 +169,7 @@ compress_html:
   profile: false
   blanklines: false
   ignore:
-    envs: [development]
+    envs: [ development ]
 
 exclude:
   - "*.gem"
@@ -183,7 +183,7 @@ exclude:
   - package*.json
 
 jekyll-archives:
-  enabled: [categories, tags]
+  enabled: [ categories, tags ]
   layouts:
     category: category
     tag: tag
