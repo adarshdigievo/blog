@@ -1,0 +1,76 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+/* Tighten sidebar spacing to accommodate PSF badge */
+#sidebar {
+  .profile-wrapper {
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .site-title {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  ul {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .sidebar-bottom {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .psf-badge {
+    margin-bottom: 0.5rem;
+
+    a {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      margin-bottom: 0;
+
+      &:not(:focus-visible) {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .book-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--sidebar-btn-color);
+    border: 1px solid var(--sidebar-btn-color);
+    border-radius: 1rem;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s, background-color 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+      opacity: 1;
+      background-color: var(--sidebar-hover-bg);
+      color: var(--sidebar-active-color);
+    }
+  }
+}
+
+
+

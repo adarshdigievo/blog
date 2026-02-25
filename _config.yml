@@ -19,7 +19,7 @@ timezone: Asia/Kolkata
 
 title: Blog | Adarsh Divakaran # the main title
 
-tagline: 💚 Python & 🍕 | </br> Get my book <a href="https://deepdivepython.com"> <u>Deep Dive Python </u>🔗</a> — learn advanced Python concepts straight from real open-source code. # it will display as the sub-title
+tagline: 💚 Python & 🍕 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Tech blog of Adarsh Divakaran
