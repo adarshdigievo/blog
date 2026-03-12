@@ -1,0 +1,12 @@
+---
+layout: layouts/section.njk
+sectionTitle: Personal
+sectionSlug: personal
+sectionFeedUrl: /personal/feed.xml
+feedUrl: /personal/feed.xml
+feedTitle: "Blog | Adarsh Divakaran - Personal"
+pagination:
+  data: collections.personal
+  size: 10
+permalink: "{% if pagination.pageNumber > 0 %}/personal/page/{{ pagination.pageNumber + 1 }}/{% else %}/personal/{% endif %}"
+---
