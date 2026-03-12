@@ -1,0 +1,20 @@
+---
+layout: layouts/page.njk
+title: Archives
+permalink: /archives/
+---
+
+<div class="archives">
+  {% set yearGroups = collections.allPosts | groupByYear %}
+  {% for group in yearGroups %}
+    <h2 class="archives-year">{{ group.year }}</h2>
+    <ul class="archives-list">
+      {% for post in group.posts %}
+      <li class="archives-item">
+        <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
