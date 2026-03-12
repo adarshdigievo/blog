@@ -1,27 +1,19 @@
-# Bundler cache
-.bundle
-vendor
-Gemfile.lock
-
-# Jekyll cache
-_site
-
-# RubyGems
-*.gem
-
-# NPM dependencies
+# Node
 node_modules/
 
-# IDE configurations
-.idea
+# Eleventy output
+_site/
+
+# IDE
+.idea/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
-# Misc
-_sass/vendors
-assets/js/dist
-
 # Superpowers
 .superpowers/
+
+# OS
+.DS_Store
+Thumbs.db
