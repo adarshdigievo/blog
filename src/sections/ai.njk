@@ -1,0 +1,12 @@
+---
+layout: layouts/section.njk
+sectionTitle: AI
+sectionSlug: ai
+sectionFeedUrl: /ai/feed.xml
+feedUrl: /ai/feed.xml
+feedTitle: "Blog | Adarsh Divakaran - AI"
+pagination:
+  data: collections.sectionAi
+  size: 10
+permalink: "{% if pagination.pageNumber > 0 %}/ai/page/{{ pagination.pageNumber + 1 }}/{% else %}/ai/{% endif %}"
+---

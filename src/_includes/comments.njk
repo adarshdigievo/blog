@@ -1,0 +1,13 @@
+{% if site.disqus_shortname %}
+<section class="comments-section">
+  <h2 class="comments-heading">Comments</h2>
+  <div id="disqus_thread" data-shortname="{{ site.disqus_shortname }}" data-page-url="{{ site.url }}{{ page.url }}" data-page-id="{{ page.url }}"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = '{{ site.url }}{{ page.url }}';
+      this.page.identifier = '{{ page.url }}';
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+{% endif %}

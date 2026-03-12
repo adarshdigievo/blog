@@ -1,0 +1,75 @@
+{# Site Header #}
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="/" class="header-title">{{ site.title }}</a>
+    </div>
+    <nav class="header-nav">
+      {% for item in navigation %}
+      <a href="{{ item.url }}" class="header-nav-link{% if page.url == item.url %} active{% endif %}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+    <div class="header-actions">
+      <button class="header-search-btn" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="hamburger" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+{# Mobile menu overlay #}
+<div class="mobile-overlay"></div>
+
+{# Mobile slide-out menu #}
+<div class="mobile-menu">
+  <div class="mobile-menu-inner">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-title">Menu</span>
+      <button class="mobile-menu-close" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav">
+      {% for item in navigation %}
+      <a href="{{ item.url }}" class="mobile-nav-link{% if page.url == item.url %} active{% endif %}">
+        <i class="{{ item.icon }}"></i> {{ item.label }}
+      </a>
+      {% endfor %}
+    </nav>
+    <hr class="mobile-divider">
+    <div class="mobile-profile">
+      <img src="{{ site.avatar }}" alt="{{ site.author.name }}" class="mobile-avatar">
+      <div class="mobile-name">{{ site.author.name }}</div>
+      <div class="mobile-bio">{{ site.tagline }}</div>
+      <a href="{{ site.bookLink }}" class="mobile-book" target="_blank" rel="noopener">
+        <i class="fa-solid fa-book"></i> My Book: Deep Dive Python
+      </a>
+    </div>
+    <hr class="mobile-divider">
+    <div class="mobile-social">
+      {% for link in social %}
+      <a href="{{ link.url }}" title="{{ link.label }}" {% if link.url | string | truncate(4, false, '') == "http" %}target="_blank" rel="noopener"{% endif %}>
+        <i class="{{ link.icon }}"></i>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# Global search overlay #}
+<div class="search-overlay">
+  <div class="search-overlay-inner">
+    <div class="search-input-wrapper">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Search posts..." autocomplete="off" aria-label="Search posts">
+      <kbd class="search-kbd">Esc</kbd>
+    </div>
+    <div id="search-results" class="search-results" hidden></div>
+  </div>
+</div>

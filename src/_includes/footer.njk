@@ -1,0 +1,25 @@
+{# Site Footer #}
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-social">
+      {% for link in social %}
+      <a href="{{ link.url }}" title="{{ link.label }}" {% if link.url | string | truncate(4, false, '') == "http" %}target="_blank" rel="noopener"{% endif %}>
+        <i class="{{ link.icon }}"></i>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="footer-center">
+      <a href="https://www.python.org/psf/membership/" target="_blank" rel="noopener" class="footer-psf">
+        <img src="/assets/img/profile/PSF_Supporting_Member_badge.png" alt="PSF Supporting Member" class="footer-psf-img">
+      </a>
+    </div>
+    <div class="footer-license">
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener" class="footer-cc">
+        <i class="fa-brands fa-creative-commons"></i>
+        <i class="fa-brands fa-creative-commons-by"></i>
+        <i class="fa-brands fa-creative-commons-sa"></i>
+      </a>
+      <span class="footer-copy">Content licensed under CC BY-SA 4.0</span>
+    </div>
+  </div>
+</footer>

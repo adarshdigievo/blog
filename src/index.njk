@@ -1,0 +1,7 @@
+---
+layout: layouts/home.njk
+pagination:
+  data: collections.allPosts
+  size: 10
+permalink: "{% if pagination.pageNumber > 0 %}/page/{{ pagination.pageNumber + 1 }}/{% else %}/{% endif %}"
+---

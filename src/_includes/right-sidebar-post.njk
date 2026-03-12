@@ -1,0 +1,41 @@
+<aside class="right-sidebar">
+  <div class="right-sidebar-inner">
+    <div class="aside-section">
+      <h3 class="aside-heading">On This Page</h3>
+      <nav class="toc-list" id="toc"></nav>
+    </div>
+    <div class="aside-section">
+      <h3 class="aside-heading">Sections</h3>
+      <div class="sections-nav">
+        {% set pyCount = collections.sectionPython | size %}
+        {% set aiCount = collections.sectionAi | size %}
+        {% set personalCount = collections.sectionPersonal | size %}
+        {% if pyCount > 0 %}
+        <a href="/python/" class="section-card">
+          <i class="fa-brands fa-python"></i> Python
+          <span class="section-count">{{ pyCount }} posts</span>
+        </a>
+        {% endif %}
+        {% if aiCount > 0 %}
+        <a href="/ai/" class="section-card">
+          <i class="fa-solid fa-robot"></i> AI
+          <span class="section-count">{{ aiCount }} posts</span>
+        </a>
+        {% endif %}
+        {% if personalCount > 0 %}
+        <a href="/personal/" class="section-card">
+          <i class="fa-solid fa-pen-nib"></i> Personal
+          <span class="section-count">{{ personalCount }} posts</span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="aside-section">
+      <h3 class="aside-heading">Subscribe</h3>
+      <a href="/feed/all.xml" class="subscribe-link"><i class="fa-solid fa-rss"></i> All sections</a>
+      {% if section %}
+      <a href="{% if section == 'python' %}/feed.xml{% else %}/{{ section }}/feed.xml{% endif %}" class="subscribe-link"><i class="fa-solid fa-rss"></i> This section only</a>
+      {% endif %}
+    </div>
+  </div>
+</aside>

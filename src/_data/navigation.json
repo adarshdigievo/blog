@@ -1,0 +1,7 @@
+[
+  { "label": "Home", "url": "/", "icon": "fa-solid fa-house" },
+  { "label": "Categories", "url": "/categories/", "icon": "fa-solid fa-stream" },
+  { "label": "Tags", "url": "/tags/", "icon": "fa-solid fa-tags" },
+  { "label": "Archives", "url": "/archives/", "icon": "fa-solid fa-box-archive" },
+  { "label": "About", "url": "/about/", "icon": "fa-solid fa-circle-info" }
+]

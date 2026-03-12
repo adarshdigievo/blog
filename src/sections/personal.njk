@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+rightSidebar: tags
+sectionTitle: Personal
+sectionSlug: personal
+sectionFeedUrl: /personal/feed.xml
+feedUrl: /personal/feed.xml
+feedTitle: "Blog | Adarsh Divakaran - Personal"
+permalink: /personal/
+---
+
+<header class="section-header">
+  <h1 class="section-title">{{ sectionTitle }}</h1>
+  <div class="section-feed">
+    <i class="fa-solid fa-rss"></i>
+    <a href="{{ sectionFeedUrl }}">Subscribe to {{ sectionTitle }} feed</a>
+  </div>
+</header>
+
+<div class="section-tabs">
+  <a href="/" class="section-tab">All</a>
+  <a href="/python/" class="section-tab">Python</a>
+  <a href="/ai/" class="section-tab">AI</a>
+  <a href="/personal/" class="section-tab active">Personal</a>
+</div>
+
+<div class="post-list">
+  {% set sectionPosts = collections.sectionPersonal %}
+  {% for post in sectionPosts | reverse %}
+  <article class="post-card">
+    <div class="post-card-sections">
+      {% set sections = post | postSections %}
+      {{ sections | join(" · ") | upper }}
+    </div>
+    <h2 class="post-card-title">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </h2>
+    <div class="post-card-meta">
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      <span class="separator">·</span>
+      <span>{{ post.content | readingTime }}</span>
+    </div>
+    {% if post.data.tags %}
+    <div class="post-card-tags">
+      {% for tag in post.data.tags %}
+      <a href="/tags/{{ tag | slugify }}/" class="tag-pill small">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </article>
+  {% else %}
+  <p class="no-posts">No posts in this section yet.</p>
+  {% endfor %}
+</div>
