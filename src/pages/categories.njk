@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+title: Categories
+permalink: /categories/
+---
+
+<div class="categories-list">
+  {% set catMap = collections.categoryMap %}
+  {% for catName, posts in catMap %}
+  <a href="/categories/{{ catName }}/" class="category-item">
+    <span class="category-name">{{ catName }}</span>
+    <span class="category-count">{{ posts.length }}</span>
+  </a>
+  {% endfor %}
+</div>
