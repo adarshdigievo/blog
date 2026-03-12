@@ -21,7 +21,7 @@ eleventyComputed:
 
 <div class="post-list">
   {% set tagPosts = collections[tag] %}
-  {% for post in tagPosts reversed %}
+  {% for post in tagPosts | reverse %}
   <article class="post-card">
     <div class="post-card-sections">
       {% set postSecs = post | postSections %}
