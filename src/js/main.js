@@ -245,12 +245,46 @@
 
     // === Collapsible TOC (mobile) ===
     var tocToggle = document.querySelector(".toc-toggle");
-    if (tocToggle) {
+    var tocMobileContent = document.querySelector(".toc-mobile-content");
+    if (tocToggle && tocMobileContent) {
       tocToggle.addEventListener("click", function () {
-        var tocContent = document.querySelector(".toc-mobile-content");
-        tocContent.classList.toggle("open");
+        tocMobileContent.classList.toggle("open");
         tocToggle.classList.toggle("open");
       });
+
+      // Auto-collapse TOC and scroll with offset when a link is clicked
+      tocMobileContent.addEventListener("click", function (e) {
+        var link = e.target.closest("a");
+        if (link) {
+          e.preventDefault();
+          tocMobileContent.classList.remove("open");
+          tocToggle.classList.remove("open");
+          var targetId = link.getAttribute("href").substring(1);
+          var target = document.getElementById(targetId);
+          if (target) {
+            var headerHeight = document.querySelector(".site-header").offsetHeight || 0;
+            var tocHeight = document.querySelector(".toc-mobile").offsetHeight || 0;
+            var offset = headerHeight + tocHeight + 16;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: "smooth" });
+          }
+        }
+      });
     }
+
+    // === Scroll offset for anchor links (desktop TOC sidebar) ===
+    document.querySelectorAll('.toc-list a').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        var targetId = this.getAttribute("href").substring(1);
+        var target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          var headerHeight = document.querySelector(".site-header").offsetHeight || 0;
+          var offset = headerHeight + 16;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: "smooth" });
+        }
+      });
+    });
   });
 })();

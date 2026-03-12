@@ -837,6 +837,7 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
   border-bottom: 1px solid var(--border-light);
   line-height: 1.3;
   letter-spacing: -0.01em;
+  scroll-margin-top: 80px;
 }
 .post-content h3 {
   font-family: 'Literata', Georgia, serif;
@@ -846,6 +847,7 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
   margin-top: 2rem;
   margin-bottom: 0.625rem;
   line-height: 1.35;
+  scroll-margin-top: 80px;
 }
 .post-content h4 {
   font-size: 1rem;
