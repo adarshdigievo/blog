@@ -1,0 +1,15 @@
+{% if pagination and pagination.hrefs.length > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  {% if pagination.href.previous %}
+  <a href="{{ pagination.href.previous }}" class="pagination-link pagination-prev"><i class="fa-solid fa-chevron-left"></i> Newer</a>
+  {% endif %}
+  <div class="pagination-pages">
+    {% for pageUrl in pagination.hrefs %}
+    <a href="{{ pageUrl }}" class="pagination-link{% if loop.index0 == pagination.pageNumber %} active{% endif %}">{{ loop.index }}</a>
+    {% endfor %}
+  </div>
+  {% if pagination.href.next %}
+  <a href="{{ pagination.href.next }}" class="pagination-link pagination-next">Older <i class="fa-solid fa-chevron-right"></i></a>
+  {% endif %}
+</nav>
+{% endif %}

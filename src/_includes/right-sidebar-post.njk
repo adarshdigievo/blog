@@ -1,0 +1,30 @@
+<aside class="right-sidebar">
+  <div class="right-sidebar-inner">
+    <div class="toc-section">
+      <h3 class="right-sidebar-heading">Table of Contents</h3>
+      <nav class="toc-list" id="toc"></nav>
+    </div>
+    <div class="sections-nav">
+      <h3 class="right-sidebar-heading">Sections</h3>
+      <a href="/python/" class="section-card section-python">
+        <i class="fa-brands fa-python"></i> Python
+        <span class="section-count">{{ collections.python.length }} posts</span>
+      </a>
+      <a href="/ai/" class="section-card section-ai">
+        <i class="fa-solid fa-robot"></i> AI
+        <span class="section-count">{{ collections.ai.length }} posts</span>
+      </a>
+      <a href="/personal/" class="section-card section-personal">
+        <i class="fa-solid fa-pen-nib"></i> Personal
+        <span class="section-count">{{ collections.personal.length }} posts</span>
+      </a>
+    </div>
+    <div class="subscribe-section">
+      <h3 class="right-sidebar-heading">Subscribe</h3>
+      <a href="/feed/all.xml" class="subscribe-link"><i class="fa-solid fa-rss"></i> All sections</a>
+      {% if section %}
+      <a href="{% if section == 'python' %}/feed.xml{% else %}/{{ section }}/feed.xml{% endif %}" class="subscribe-link"><i class="fa-solid fa-rss"></i> This section only</a>
+      {% endif %}
+    </div>
+  </div>
+</aside>

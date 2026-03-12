@@ -1,0 +1,13 @@
+<aside class="right-sidebar">
+  <div class="right-sidebar-inner">
+    <h3 class="right-sidebar-heading">Tags</h3>
+    <div class="tag-cloud">
+      {% for tag in collections.tagList %}
+        {% set tagCount = collections[tag].length if collections[tag] else 0 %}
+        {% if tagCount > 0 %}
+        <a href="/tags/{{ tag | slugify }}/" class="tag-pill">{{ tag }} <span class="tag-count">{{ tagCount }}</span></a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</aside>
