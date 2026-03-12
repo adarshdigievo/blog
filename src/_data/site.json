@@ -1,0 +1,17 @@
+{
+  "title": "Blog | Adarsh Divakaran",
+  "tagline": "💚 Python & 🍕",
+  "description": "Tech blog of Adarsh Divakaran",
+  "url": "https://blog.adarshd.dev",
+  "author": {
+    "name": "Adarsh Divakaran",
+    "email": "adarshdevamritham@gmail.com"
+  },
+  "avatar": "/assets/img/profile/avatar.jpg",
+  "bookLink": "https://deepdivepython.com",
+  "google_analytics": "G-PH23FYZZFS",
+  "google_site_verification": "",
+  "disqus_shortname": "blog-adarsh-divakaran",
+  "lang": "en",
+  "timezone": "Asia/Kolkata"
+}
