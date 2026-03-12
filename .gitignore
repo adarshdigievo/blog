@@ -4,16 +4,13 @@ vendor
 Gemfile.lock
 
 # Jekyll cache
-.jekyll-cache
-.jekyll-metadata
 _site
 
 # RubyGems
 *.gem
 
 # NPM dependencies
-node_modules
-package-lock.json
+node_modules/
 
 # IDE configurations
 .idea
@@ -25,3 +22,6 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
+
+# Superpowers
+.superpowers/

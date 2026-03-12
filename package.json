@@ -1,0 +1,20 @@
+{
+  "name": "blog-adarsh-divakaran",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tech blog of Adarsh Divakaran",
+  "type": "commonjs",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-attrs": "^4.2.0",
+    "prismjs": "^1.29.0",
+    "luxon": "^3.5.0"
+  }
+}
