@@ -1,0 +1,38 @@
+---
+layout: layouts/page.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - allPosts
+    - python
+    - ai
+    - personal
+    - tagList
+    - categoryList
+    - categoryMap
+  addAllPagesToCollections: false
+permalink: "/tags/{{ tag | slugify }}/"
+eleventyComputed:
+  title: "Tag: {{ tag }}"
+---
+
+<div class="post-list">
+  {% set tagPosts = collections[tag] %}
+  {% for post in tagPosts reversed %}
+  <article class="post-card">
+    <div class="post-card-sections">
+      {% set postSecs = post | postSections %}
+      {{ postSecs | join(" · ") | upper }}
+    </div>
+    <h2 class="post-card-title">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </h2>
+    <div class="post-card-meta">
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+    </div>
+  </article>
+  {% endfor %}
+</div>

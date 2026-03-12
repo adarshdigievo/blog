@@ -1,0 +1,16 @@
+---
+layout: layouts/page.njk
+title: Tags
+permalink: /tags/
+---
+
+<div class="tag-cloud-page">
+  {% for tag in collections.tagList %}
+    {% set tagCount = collections[tag].length if collections[tag] else 0 %}
+    {% if tagCount > 0 %}
+    <a href="/tags/{{ tag | slugify }}/" class="tag-pill">
+      {{ tag }} <span class="tag-count">{{ tagCount }}</span>
+    </a>
+    {% endif %}
+  {% endfor %}
+</div>
