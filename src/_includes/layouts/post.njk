@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+rightSidebar: post
+---
+
+<article class="post">
+  <div class="toc-mobile">
+    <button class="toc-toggle">
+      <i class="fa-solid fa-list"></i> Table of Contents
+      <i class="fa-solid fa-chevron-down toc-toggle-icon"></i>
+    </button>
+    <div class="toc-mobile-content">
+      <nav class="toc-list" id="toc-mobile"></nav>
+    </div>
+  </div>
+
+  <header class="post-header">
+    <div class="post-sections-badge">
+      <a href="/{{ section }}/" class="section-badge section-{{ section }}">{{ section | upper }}</a>
+      {% if sections %}
+        {% for s in sections %}
+        <a href="/{{ s }}/" class="section-badge section-{{ s }}">{{ s | upper }}</a>
+        {% endfor %}
+      {% endif %}
+    </div>
+    <h1 class="post-title">{{ title }}</h1>
+    <div class="post-meta">
+      <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+      <span class="separator">·</span>
+      <span>{{ content | readingTime }}</span>
+      {% if lastModified %}
+      <span class="separator">·</span>
+      <span>Updated {{ lastModified | readableDate }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    {{ content | safe }}
+  </div>
+
+  {% if tags %}
+  <footer class="post-footer">
+    <div class="post-tags">
+      {% for tag in tags %}
+      {% if tag != "posts" %}
+      <a href="/tags/{{ tag | slugify }}/" class="tag-pill">{{ tag }}</a>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </footer>
+  {% endif %}
+
+  {% include "comments.njk" %}
+</article>
