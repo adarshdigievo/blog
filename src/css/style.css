@@ -600,12 +600,18 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
 }
 
 .aside-avatar {
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border);
-  margin-bottom: 10px;
+  border: 3px solid var(--border);
+  margin-bottom: 12px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.aside-avatar:hover {
+  transform: scale(1.05);
+  border-color: var(--text-muted);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
 }
 
 .aside-name {

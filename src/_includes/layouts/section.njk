@@ -13,9 +13,9 @@ rightSidebar: tags
 
 <div class="section-tabs">
   <a href="/" class="section-tab">All</a>
-  <a href="/python/" class="section-tab{% if sectionSlug == 'python' %} active{% endif %}">Python</a>
-  <a href="/ai/" class="section-tab{% if sectionSlug == 'ai' %} active{% endif %}">AI</a>
-  <a href="/personal/" class="section-tab{% if sectionSlug == 'personal' %} active{% endif %}">Personal</a>
+  {% if collections.sectionPython | size > 0 %}<a href="/python/" class="section-tab{% if sectionSlug == 'python' %} active{% endif %}">Python</a>{% endif %}
+  {% if collections.sectionAi | size > 0 %}<a href="/ai/" class="section-tab{% if sectionSlug == 'ai' %} active{% endif %}">AI</a>{% endif %}
+  {% if collections.sectionPersonal | size > 0 %}<a href="/personal/" class="section-tab{% if sectionSlug == 'personal' %} active{% endif %}">Personal</a>{% endif %}
 </div>
 
 <div class="post-list">

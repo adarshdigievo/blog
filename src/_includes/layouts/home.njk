@@ -5,9 +5,9 @@ rightSidebar: tags
 
 <div class="section-tabs">
   <a href="/" class="section-tab active">All</a>
-  <a href="/python/" class="section-tab">Python</a>
-  <a href="/ai/" class="section-tab">AI</a>
-  <a href="/personal/" class="section-tab">Personal</a>
+  {% if collections.sectionPython | size > 0 %}<a href="/python/" class="section-tab">Python</a>{% endif %}
+  {% if collections.sectionAi | size > 0 %}<a href="/ai/" class="section-tab">AI</a>{% endif %}
+  {% if collections.sectionPersonal | size > 0 %}<a href="/personal/" class="section-tab">Personal</a>{% endif %}
 </div>
 
 <div id="post-list" class="post-list">

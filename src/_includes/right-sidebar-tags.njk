@@ -2,11 +2,11 @@
   <div class="right-sidebar-inner">
     <div class="aside-section aside-profile-section">
       <h3 class="aside-heading">About</h3>
-      <img src="{{ site.avatar }}" alt="{{ site.author.name }}" class="aside-avatar">
-      <div class="aside-name">{{ site.author.name }}</div>
+      <a href="/"><img src="{{ site.avatar }}" alt="{{ site.author.name }}" class="aside-avatar"></a>
+      <div class="aside-name">{{ site.title }}</div>
       <div class="aside-bio">{{ site.tagline }}</div>
       <a href="{{ site.bookLink }}" class="aside-book" target="_blank" rel="noopener">
-        <i class="fa-solid fa-book"></i> Deep Dive Python
+        <i class="fa-solid fa-book"></i> My Book: Deep Dive Python
       </a>
     </div>
     <div class="aside-section">
@@ -23,18 +23,27 @@
     <div class="aside-section">
       <h3 class="aside-heading">Sections</h3>
       <div class="sections-nav">
+        {% set pyCount = collections.sectionPython | size %}
+        {% set aiCount = collections.sectionAi | size %}
+        {% set personalCount = collections.sectionPersonal | size %}
+        {% if pyCount > 0 %}
         <a href="/python/" class="section-card">
           <i class="fa-brands fa-python"></i> Python
-          <span class="section-count">{{ collections.sectionPython.length }} posts</span>
+          <span class="section-count">{{ pyCount }} posts</span>
         </a>
+        {% endif %}
+        {% if aiCount > 0 %}
         <a href="/ai/" class="section-card">
           <i class="fa-solid fa-robot"></i> AI
-          <span class="section-count">{{ collections.sectionAi.length }} posts</span>
+          <span class="section-count">{{ aiCount }} posts</span>
         </a>
+        {% endif %}
+        {% if personalCount > 0 %}
         <a href="/personal/" class="section-card">
           <i class="fa-solid fa-pen-nib"></i> Personal
-          <span class="section-count">{{ collections.sectionPersonal.length }} posts</span>
+          <span class="section-count">{{ personalCount }} posts</span>
         </a>
+        {% endif %}
       </div>
     </div>
     <div class="aside-section">

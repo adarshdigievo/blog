@@ -36,7 +36,8 @@ module.exports = {
         const text = content
           .replace(/<[^>]+>/g, "")
           .replace(/^#{1,6}\s+/gm, "")
-          .replace(/!\[.*?\]\(.*?\)/g, "")
+          .replace(/!\[.*?\]\(.*?\)(\{[^}]*\})?/g, "")
+          .replace(/\{:?\s*[^}]*\}/g, "")
           .replace(/\[([^\]]+)\]\(.*?\)/g, "$1")
           .replace(/^>\s*/gm, "")
           .replace(/[*_`~]/g, "")

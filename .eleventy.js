@@ -192,6 +192,11 @@ module.exports = function (eleventyConfig) {
       .replace(/-+/g, "-");
   });
 
+  eleventyConfig.addFilter("size", (arr) => {
+    if (!arr) return 0;
+    return arr.length || 0;
+  });
+
   eleventyConfig.addFilter("postSections", (post) => {
     const sections = [post.data.section];
     if (Array.isArray(post.data.sections)) {
