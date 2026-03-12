@@ -1,6 +1,0 @@
-{
-  "layout": "layouts/post.njk",
-  "eleventyComputed": {
-    "permalink": "{% if section == 'python' %}/posts/{{ page.fileSlug }}/{% else %}/{{ section }}/posts/{{ page.fileSlug }}/{% endif %}"
-  }
-}

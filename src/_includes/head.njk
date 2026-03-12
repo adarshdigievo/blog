@@ -9,13 +9,8 @@
 {% endif %}
 
 {# Meta description #}
-{% if description %}
-<meta name="description" content="{{ description }}">
-{% elif content %}
-<meta name="description" content="{{ content | excerpt }}">
-{% else %}
-<meta name="description" content="{{ site.description }}">
-{% endif %}
+{% set metaDesc = description or autoExcerpt or site.description %}
+<meta name="description" content="{{ metaDesc }}">
 
 <meta name="author" content="{{ site.author.name }}">
 <meta name="robots" content="index, follow">
@@ -25,9 +20,9 @@
 
 {# Open Graph #}
 <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if description %}{{ description }}{% elif content %}{{ content | excerpt }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:description" content="{{ metaDesc }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
 {% if image %}
 <meta property="og:image" content="{{ site.url }}{{ image }}">
 {% else %}
@@ -40,7 +35,7 @@
 <meta name="twitter:site" content="@adarshd905">
 <meta name="twitter:creator" content="@adarshd905">
 <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if description %}{{ description }}{% elif content %}{{ content | excerpt }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:description" content="{{ metaDesc }}">
 {% if image %}
 <meta name="twitter:image" content="{{ site.url }}{{ image }}">
 {% else %}
@@ -48,7 +43,7 @@
 {% endif %}
 
 {# JSON-LD Structured Data #}
-{% if layout == 'post' %}
+{% if layout == 'layouts/post.njk' %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,7 +55,7 @@
     "@type": "Person",
     "name": "{{ site.author.name }}"
   },
-  "description": "{% if description %}{{ description | replace('"', '&quot;') }}{% elif content %}{{ content | excerpt | replace('"', '&quot;') }}{% else %}{{ site.description | replace('"', '&quot;') }}{% endif %}",
+  "description": "{{ metaDesc | replace('"', '&quot;') }}",
   "url": "{{ site.url }}{{ page.url }}",
   "publisher": {
     "@type": "Person",
@@ -85,7 +80,7 @@
 {% endif %}
 
 {# RSS Feed Autodiscovery #}
-<link rel="alternate" type="application/rss+xml" title="{{ site.title }} — All Posts" href="{{ site.url }}{% if feedUrl %}{{ feedUrl }}{% else %}/feed/all.xml{% endif %}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} — All Posts" href="{{ site.url }}{% if feedUrl %}{{ feedUrl }}{% else %}/feed/all.xml{% endif %}">
 
 {# Google Analytics #}
 {% if site.google_analytics %}
@@ -109,6 +104,11 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
 <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">
+
+{# Fonts #}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 {# Stylesheet #}
 <link rel="stylesheet" href="/assets/lib/fontawesome-free/css/all.min.css">

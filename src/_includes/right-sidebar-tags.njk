@@ -1,13 +1,45 @@
 <aside class="right-sidebar">
   <div class="right-sidebar-inner">
-    <h3 class="right-sidebar-heading">Tags</h3>
-    <div class="tag-cloud">
-      {% for tag in collections.tagList %}
-        {% set tagCount = collections[tag].length if collections[tag] else 0 %}
-        {% if tagCount > 0 %}
-        <a href="/tags/{{ tag | slugify }}/" class="tag-pill">{{ tag }} <span class="tag-count">{{ tagCount }}</span></a>
-        {% endif %}
-      {% endfor %}
+    <div class="aside-section aside-profile-section">
+      <h3 class="aside-heading">About</h3>
+      <img src="{{ site.avatar }}" alt="{{ site.author.name }}" class="aside-avatar">
+      <div class="aside-name">{{ site.author.name }}</div>
+      <div class="aside-bio">{{ site.tagline }}</div>
+      <a href="{{ site.bookLink }}" class="aside-book" target="_blank" rel="noopener">
+        <i class="fa-solid fa-book"></i> Deep Dive Python
+      </a>
+    </div>
+    <div class="aside-section">
+      <h3 class="aside-heading">Tags</h3>
+      <div class="tag-cloud">
+        {% for tag in collections.tagList %}
+          {% set tagCount = collections[tag].length if collections[tag] else 0 %}
+          {% if tagCount > 0 %}
+          <a href="/tags/{{ tag | slugify }}/" class="tag-pill">{{ tag }} <span class="tag-count">{{ tagCount }}</span></a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="aside-section">
+      <h3 class="aside-heading">Sections</h3>
+      <div class="sections-nav">
+        <a href="/python/" class="section-card">
+          <i class="fa-brands fa-python"></i> Python
+          <span class="section-count">{{ collections.sectionPython.length }} posts</span>
+        </a>
+        <a href="/ai/" class="section-card">
+          <i class="fa-solid fa-robot"></i> AI
+          <span class="section-count">{{ collections.sectionAi.length }} posts</span>
+        </a>
+        <a href="/personal/" class="section-card">
+          <i class="fa-solid fa-pen-nib"></i> Personal
+          <span class="section-count">{{ collections.sectionPersonal.length }} posts</span>
+        </a>
+      </div>
+    </div>
+    <div class="aside-section">
+      <h3 class="aside-heading">Subscribe</h3>
+      <a href="/feed/all.xml" class="subscribe-link"><i class="fa-solid fa-rss"></i> All posts feed</a>
     </div>
   </div>
 </aside>

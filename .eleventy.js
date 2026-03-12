@@ -3,7 +3,6 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const { execSync } = require("child_process");
 const Prism = require("prismjs");
 
 // Load additional Prism languages
@@ -52,8 +51,9 @@ module.exports = function (eleventyConfig) {
         s
           .trim()
           .toLowerCase()
-          .replace(/[\s+]/g, "-")
-          .replace(/[^\w-]/g, ""),
+          .replace(/\s+/g, "-")
+          .replace(/[^\w-]/g, "")
+          .replace(/-+/g, "-"),
     })
     .use(markdownItAttrs);
 
@@ -77,21 +77,21 @@ module.exports = function (eleventyConfig) {
     return false;
   }
 
-  eleventyConfig.addCollection("python", function (collectionApi) {
+  eleventyConfig.addCollection("sectionPython", function (collectionApi) {
     return collectionApi
       .getFilteredByGlob("src/posts/*.md")
       .filter((post) => postInSection(post, "python"))
       .sort((a, b) => b.date - a.date);
   });
 
-  eleventyConfig.addCollection("ai", function (collectionApi) {
+  eleventyConfig.addCollection("sectionAi", function (collectionApi) {
     return collectionApi
       .getFilteredByGlob("src/posts/*.md")
       .filter((post) => postInSection(post, "ai"))
       .sort((a, b) => b.date - a.date);
   });
 
-  eleventyConfig.addCollection("personal", function (collectionApi) {
+  eleventyConfig.addCollection("sectionPersonal", function (collectionApi) {
     return collectionApi
       .getFilteredByGlob("src/posts/*.md")
       .filter((post) => postInSection(post, "personal"))
@@ -187,8 +187,9 @@ module.exports = function (eleventyConfig) {
     return str
       .toLowerCase()
       .trim()
-      .replace(/[\s+]/g, "-")
-      .replace(/[^\w-]/g, "");
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]/g, "")
+      .replace(/-+/g, "-");
   });
 
   eleventyConfig.addFilter("postSections", (post) => {
@@ -199,28 +200,7 @@ module.exports = function (eleventyConfig) {
     return sections;
   });
 
-  // --- Last modified from git ---
-  eleventyConfig.addGlobalData("eleventyComputed", {
-    lastModified: function (data) {
-      if (!data.page || !data.page.inputPath) return null;
-      try {
-        const filePath = data.page.inputPath;
-        const commitCount = execSync(
-          'git log --oneline -- "' + filePath + '"',
-          { encoding: "utf-8" }
-        ).trim().split("\n").filter(Boolean).length;
-
-        if (commitCount > 1) {
-          const lastMod = execSync(
-            'git log -1 --format="%ai" -- "' + filePath + '"',
-            { encoding: "utf-8" }
-          ).trim();
-          return new Date(lastMod);
-        }
-      } catch (e) {}
-      return null;
-    },
-  });
+  // Note: eleventyComputed (autoExcerpt, lastModified) is in src/posts/posts.11tydata.js
 
   // --- Config ---
   return {

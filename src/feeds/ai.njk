@@ -10,13 +10,13 @@
   <subtitle>{{ site.description }}</subtitle>
   <link href="{{ site.url }}/ai/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="{{ site.url }}/ai/" rel="alternate" type="text/html"/>
-  <updated>{{ collections.ai | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <updated>{{ collections.sectionAi | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   <id>{{ site.url }}/</id>
   <author>
     <name>{{ site.author.name }}</name>
     <email>{{ site.author.email }}</email>
   </author>
-  {%- for post in collections.ai | head(20) %}
+  {%- for post in collections.sectionAi | head(20) %}
   <entry>
     <title>{{ post.data.title }}</title>
     <link href="{{ site.url }}{{ post.url }}" rel="alternate" type="text/html"/>

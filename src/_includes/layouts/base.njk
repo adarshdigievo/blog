@@ -4,8 +4,8 @@
   {% include "head.njk" %}
 </head>
 <body>
+  {% include "header.njk" %}
   <div class="layout">
-    {% include "sidebar.njk" %}
     <main class="main-content">
       {{ content | safe }}
     </main>
@@ -15,6 +15,7 @@
       {% include "right-sidebar-post.njk" %}
     {% endif %}
   </div>
+  {% include "footer.njk" %}
   <script src="/js/main.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ eleventyExcludeFromCollections: true
   {%- for post in collections.allPosts %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date | isoDate }}</lastmod>
+    <lastmod>{% if post.data.lastModified %}{{ post.data.lastModified | isoDate }}{% else %}{{ post.date | isoDate }}{% endif %}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

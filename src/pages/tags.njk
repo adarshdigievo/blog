@@ -1,16 +1,24 @@
 ---
-layout: layouts/page.njk
+layout: layouts/base.njk
 title: Tags
 permalink: /tags/
 ---
 
-<div class="tag-cloud-page">
-  {% for tag in collections.tagList %}
-    {% set tagCount = collections[tag].length if collections[tag] else 0 %}
-    {% if tagCount > 0 %}
-    <a href="/tags/{{ tag | slugify }}/" class="tag-pill">
-      {{ tag }} <span class="tag-count">{{ tagCount }}</span>
-    </a>
-    {% endif %}
-  {% endfor %}
-</div>
+<article class="page">
+  <header class="page-header">
+    <h1 class="page-title">Tags</h1>
+  </header>
+  <div class="page-content">
+    <div class="tags-grid">
+      {% for tag in collections.tagList %}
+        {% set tagCount = collections[tag].length if collections[tag] else 0 %}
+        {% if tagCount > 0 %}
+        <a href="/tags/{{ tag | slugify }}/" class="tag-card">
+          <span class="tag-card-name">{{ tag }}</span>
+          <span class="tag-card-count">{{ tagCount }} {{ "post" if tagCount == 1 else "posts" }}</span>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</article>
