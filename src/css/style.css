@@ -255,7 +255,7 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 864px;
   margin: 0 auto;
   padding: 14px 32px;
 }
@@ -552,26 +552,15 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
    ========================================================================== */
 
 .layout {
-  display: flex;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 32px 0 32px;
+  position: relative;
   min-height: calc(100vh - 120px);
+  padding: 0 32px;
 }
 
 .main-content {
-  flex: 1;
-  min-width: 0;
-  padding: 32px 40px 32px 0;
-}
-
-.post {
   max-width: 800px;
   margin: 0 auto;
-}
-
-body.sidebar-hidden .main-content {
-  padding-right: 0;
+  padding: 32px 0;
 }
 
 body.sidebar-hidden .right-sidebar {
@@ -583,11 +572,13 @@ body.sidebar-hidden .right-sidebar {
    ========================================================================== */
 
 .right-sidebar {
-  width: 280px;
-  flex-shrink: 0;
+  position: fixed;
+  right: 64px;
+  top: 68px;
+  width: 260px;
   padding: 32px 0 32px 24px;
   border-left: 1px solid var(--border-light);
-  margin-right: 48px;
+  z-index: 10;
 }
 
 .sidebar-toggle,
@@ -623,8 +614,6 @@ body.sidebar-hidden .sidebar-toggle { display: none; }
 body.sidebar-hidden .sidebar-show-toggle { display: flex; }
 
 .right-sidebar-inner {
-  position: sticky;
-  top: 80px;
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -1031,7 +1020,7 @@ blockquote.prompt-info p:last-child, blockquote.prompt-tip p:last-child, blockqu
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 864px;
   margin: 0 auto;
   padding: 24px 32px;
   font-size: 0.75rem;
@@ -1325,13 +1314,12 @@ body.nav-open { overflow: hidden; }
   .header-nav { display: none; }
   .hamburger { display: flex; }
   .right-sidebar { display: none; }
-  .main-content { padding: 24px 0; }
+  .main-content { padding: 24px 0; max-width: none; }
   .layout { padding: 0 20px; }
   .header-inner { padding: 12px 20px; }
   .footer-inner { padding: 16px 20px; }
   .toc-mobile { display: block; }
   .sidebar-toggle, .sidebar-show-toggle { display: none !important; }
-  .post { margin: 0; }
 }
 
 /* ==========================================================================
