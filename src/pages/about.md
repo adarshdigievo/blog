@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+<img src="/assets/img/profile/avatar.jpg" alt="Adarsh Divakaran" class="about-photo">
+
 ## About Me
 
 Hi, I'm Adarsh Divakaran👋

@@ -172,6 +172,17 @@
       });
     }
 
+    // === Reading Progress Bar ===
+    var progressBar = document.getElementById("reading-progress");
+    if (progressBar) {
+      window.addEventListener("scroll", function () {
+        var scrollTop = window.pageYOffset;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + "%";
+      }, { passive: true });
+    }
+
     // === TOC Generation + Highlight ===
     var headings = document.querySelectorAll(".post-content h2[id], .post-content h3[id]");
     var tocContainers = document.querySelectorAll(".toc-list");
