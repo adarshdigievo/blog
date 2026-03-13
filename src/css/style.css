@@ -1447,7 +1447,6 @@ body.nav-open { overflow: hidden; }
 
 @media (max-width: 1400px) {
   .right-sidebar { display: none; }
-  .layout { grid-template-columns: 1fr min(800px, 100%) 1fr; }
   .sidebar-toggle, .sidebar-show-toggle { display: none !important; }
   .toc-mobile { display: block; }
 }
@@ -1457,8 +1456,8 @@ body.nav-open { overflow: hidden; }
   .hamburger { display: flex; }
   .main-content { padding: 24px 20px; }
   .layout { grid-template-columns: 1fr; }
-  .header-inner { padding: 12px 20px; }
-  .footer-inner { padding: 16px 20px; }
+  .header-inner { padding: 12px 20px; max-width: none; }
+  .footer-inner { padding: 16px 20px; max-width: none; }
 }
 
 /* ==========================================================================
