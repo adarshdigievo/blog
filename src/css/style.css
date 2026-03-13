@@ -553,9 +553,9 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
 
 .layout {
   display: flex;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 32px 0 32px;
   min-height: calc(100vh - 120px);
 }
 
@@ -583,11 +583,11 @@ body.sidebar-hidden .right-sidebar {
    ========================================================================== */
 
 .right-sidebar {
-  width: 320px;
+  width: 280px;
   flex-shrink: 0;
-  padding: 32px 0 32px 36px;
+  padding: 32px 0 32px 24px;
   border-left: 1px solid var(--border-light);
-  position: relative;
+  margin-right: 48px;
 }
 
 .sidebar-toggle,
