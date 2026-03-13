@@ -320,27 +320,6 @@
           applySidebarState(false);
         });
       }
-
-      // Hide sidebar when footer is in view
-      var footer = document.querySelector(".site-footer");
-      if (footer) {
-        var sidebar = document.querySelector(".right-sidebar");
-        var sidebarHeight = 0;
-        function updateSidebarBottom() {
-          var footerRect = footer.getBoundingClientRect();
-          var viewportHeight = window.innerHeight;
-          if (footerRect.top < viewportHeight) {
-            var overlap = viewportHeight - footerRect.top;
-            sidebar.style.maxHeight = "calc(100vh - 100px - " + overlap + "px)";
-            sidebar.style.overflow = "hidden";
-          } else {
-            sidebar.style.maxHeight = "";
-            sidebar.style.overflow = "";
-          }
-        }
-        window.addEventListener("scroll", updateSidebarBottom, { passive: true });
-        updateSidebarBottom();
-      }
     }
   });
 })();
