@@ -565,6 +565,19 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
   padding: 32px 40px 32px 0;
 }
 
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body.sidebar-hidden .main-content {
+  padding-right: 0;
+}
+
+body.sidebar-hidden .right-sidebar {
+  display: none;
+}
+
 /* ==========================================================================
    7. Right Sidebar
    ========================================================================== */
@@ -574,7 +587,40 @@ button { cursor:pointer; border:none; background:none; font-family:inherit; font
   flex-shrink: 0;
   padding: 32px 0 32px 36px;
   border-left: 1px solid var(--border-light);
+  position: relative;
 }
+
+.sidebar-toggle,
+.sidebar-show-toggle {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  z-index: 10;
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.sidebar-toggle:hover,
+.sidebar-show-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.sidebar-toggle { display: flex; }
+.sidebar-show-toggle { display: none; }
+
+body.sidebar-hidden .sidebar-toggle { display: none; }
+body.sidebar-hidden .sidebar-show-toggle { display: flex; }
 
 .right-sidebar-inner {
   position: sticky;
@@ -1284,6 +1330,8 @@ body.nav-open { overflow: hidden; }
   .header-inner { padding: 12px 20px; }
   .footer-inner { padding: 16px 20px; }
   .toc-mobile { display: block; }
+  .sidebar-toggle, .sidebar-show-toggle { display: none !important; }
+  .post { margin: 0; }
 }
 
 /* ==========================================================================

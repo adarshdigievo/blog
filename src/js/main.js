@@ -196,8 +196,8 @@
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               tocLinks.forEach(function (link) { link.classList.remove("active"); });
-              var activeLink = document.querySelector('.toc-list a[href="#' + entry.target.id + '"]');
-              if (activeLink) activeLink.classList.add("active");
+              var activeLinks = document.querySelectorAll('.toc-list a[href="#' + entry.target.id + '"]');
+              activeLinks.forEach(function (link) { link.classList.add("active"); });
             }
           });
         },
@@ -286,5 +286,40 @@
         }
       });
     });
+
+    // === Sidebar Toggle (Desktop) ===
+    var SIDEBAR_KEY = "sidebar-hidden";
+    var sidebarHideBtn = document.querySelector(".sidebar-toggle");
+    var sidebarShowBtn = document.querySelector(".sidebar-show-toggle");
+
+    function applySidebarState(hidden) {
+      if (hidden) {
+        document.body.classList.add("sidebar-hidden");
+      } else {
+        document.body.classList.remove("sidebar-hidden");
+      }
+    }
+
+    var hasSidebar = document.querySelector(".right-sidebar");
+    if (!hasSidebar && sidebarHideBtn) {
+      sidebarHideBtn.style.display = "none";
+    }
+    if (hasSidebar) {
+      applySidebarState(localStorage.getItem(SIDEBAR_KEY) === "true");
+
+      if (sidebarHideBtn) {
+        sidebarHideBtn.addEventListener("click", function () {
+          localStorage.setItem(SIDEBAR_KEY, "true");
+          applySidebarState(true);
+        });
+      }
+
+      if (sidebarShowBtn) {
+        sidebarShowBtn.addEventListener("click", function () {
+          localStorage.setItem(SIDEBAR_KEY, "false");
+          applySidebarState(false);
+        });
+      }
+    }
   });
 })();
