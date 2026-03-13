@@ -7,7 +7,7 @@ rightSidebar: post
 <article class="post">
   <div class="toc-mobile">
     <button class="toc-toggle">
-      <i class="fa-solid fa-list"></i> Table of Contents
+      <i class="fa-solid fa-list"></i> <span class="toc-toggle-text">Table of Contents</span><span class="toc-active-section" id="toc-active-section"></span>
     </button>
     <div class="toc-mobile-content">
       <nav class="toc-list" id="toc-mobile"></nav>
@@ -50,6 +50,21 @@ rightSidebar: post
     </div>
   </footer>
   {% endif %}
+
+  <nav class="post-nav">
+    {% if previousPost %}
+    <a href="{{ previousPost.url }}" class="post-nav-link post-nav-prev">
+      <span class="post-nav-label"><i class="fa-solid fa-arrow-left"></i> Previous</span>
+      <span class="post-nav-title">{{ previousPost.title }}</span>
+    </a>
+    {% endif %}
+    {% if nextPost %}
+    <a href="{{ nextPost.url }}" class="post-nav-link post-nav-next">
+      <span class="post-nav-label">Next <i class="fa-solid fa-arrow-right"></i></span>
+      <span class="post-nav-title">{{ nextPost.title }}</span>
+    </a>
+    {% endif %}
+  </nav>
 
   {% include "comments.njk" %}
 </article>

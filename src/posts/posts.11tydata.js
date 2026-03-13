@@ -24,6 +24,18 @@ module.exports = {
       } catch (e) {}
       return null;
     },
+    previousPost: function (data) {
+      var all = data.collections.allPosts;
+      if (!all) return null;
+      var idx = all.findIndex(function (p) { return p.inputPath === data.page.inputPath; });
+      return idx >= 0 && idx < all.length - 1 ? { url: all[idx + 1].url, title: all[idx + 1].data.title } : null;
+    },
+    nextPost: function (data) {
+      var all = data.collections.allPosts;
+      if (!all) return null;
+      var idx = all.findIndex(function (p) { return p.inputPath === data.page.inputPath; });
+      return idx > 0 ? { url: all[idx - 1].url, title: all[idx - 1].data.title } : null;
+    },
     autoExcerpt: function (data) {
       if (data.description) return data.description;
       if (!data.page || !data.page.inputPath) return null;

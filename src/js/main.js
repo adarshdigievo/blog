@@ -298,6 +298,97 @@
       });
     });
 
+    // === Scroll to Top ===
+    var scrollTopBtn = document.getElementById("scroll-to-top");
+    if (scrollTopBtn) {
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 400) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+      }, { passive: true });
+      scrollTopBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    // === Copy Link to Heading ===
+    document.querySelectorAll(".post-content h2[id], .post-content h3[id]").forEach(function (heading) {
+      var anchor = document.createElement("a");
+      anchor.className = "heading-anchor";
+      anchor.innerHTML = '<i class="fa-solid fa-link"></i>';
+      anchor.title = "Copy link";
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var url = window.location.origin + window.location.pathname + "#" + heading.id;
+        navigator.clipboard.writeText(url).then(function () {
+          anchor.innerHTML = '<i class="fa-solid fa-check"></i>';
+          setTimeout(function () {
+            anchor.innerHTML = '<i class="fa-solid fa-link"></i>';
+          }, 1500);
+        });
+      });
+      heading.appendChild(anchor);
+    });
+
+    // === Active Section in TOC Toggle ===
+    var tocActiveSection = document.getElementById("toc-active-section");
+    if (tocActiveSection) {
+      var postHeadings = document.querySelectorAll(".post-content h2[id]");
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            tocActiveSection.textContent = entry.target.textContent.replace(/^#\s*/, "");
+          }
+        });
+      }, { rootMargin: "0px 0px -80% 0px", threshold: 0 });
+      postHeadings.forEach(function (h) { sectionObserver.observe(h); });
+    }
+
+    // === Keyboard Navigation ===
+    var postCards = document.querySelectorAll(".post-card");
+    var paginationPrev = document.querySelector(".pagination-prev");
+    var paginationNext = document.querySelector(".pagination-next");
+    var postNavPrev = document.querySelector(".post-nav-prev");
+    var postNavNext = document.querySelector(".post-nav-next");
+
+    document.addEventListener("keydown", function (e) {
+      if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") return;
+      if (document.querySelector(".search-overlay.active")) return;
+
+      // j/k to navigate post cards on list pages
+      if (postCards.length > 0 && (e.key === "j" || e.key === "k")) {
+        e.preventDefault();
+        var focused = document.querySelector(".post-card.keyboard-focus");
+        var idx = focused ? Array.prototype.indexOf.call(postCards, focused) : -1;
+        if (e.key === "j") idx = Math.min(idx + 1, postCards.length - 1);
+        if (e.key === "k") idx = Math.max(idx - 1, 0);
+        if (focused) focused.classList.remove("keyboard-focus");
+        postCards[idx].classList.add("keyboard-focus");
+        postCards[idx].scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      // Enter to open focused post
+      if (e.key === "Enter" && postCards.length > 0) {
+        var focusedCard = document.querySelector(".post-card.keyboard-focus");
+        if (focusedCard) {
+          var link = focusedCard.querySelector(".post-card-title a");
+          if (link) link.click();
+        }
+      }
+
+      // Arrow keys for pagination and post navigation
+      if (e.key === "ArrowLeft") {
+        if (postNavPrev) { postNavPrev.click(); }
+        else if (paginationPrev) { paginationPrev.click(); }
+      }
+      if (e.key === "ArrowRight") {
+        if (postNavNext) { postNavNext.click(); }
+        else if (paginationNext) { paginationNext.click(); }
+      }
+    });
+
     // === Sidebar Toggle (Desktop) ===
     var SIDEBAR_KEY = "sidebar-hidden";
     var sidebarHideBtn = document.querySelector(".sidebar-toggle");
