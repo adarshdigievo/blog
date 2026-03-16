@@ -725,9 +725,11 @@ body.sidebar-hidden .sidebar-show-toggle { display: flex; }
 
 .section-tabs {
   display: flex;
-  gap: 0;
+  gap: 4px;
   margin-bottom: 28px;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 4px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -736,17 +738,18 @@ body.sidebar-hidden .sidebar-show-toggle { display: flex; }
 .section-tab {
   font-size: 0.8125rem;
   color: var(--text-muted);
-  padding: 0 0 8px;
-  margin-right: 20px;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  padding: 8px 18px;
+  border-radius: calc(var(--radius) - 2px);
   white-space: nowrap;
   transition: all var(--transition);
   text-decoration: none;
   font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
-.section-tab:hover { color: var(--text-secondary); }
-.section-tab.active { color: var(--text); border-bottom-color: var(--text); }
+.section-tab:hover { color: var(--text-secondary); background: var(--bg-hover); }
+.section-tab.active { color: var(--text); background: var(--bg); box-shadow: 0 1px 4px rgba(0,0,0,0.12); font-weight: 600; border: 1px solid var(--section-color); }
 
 /* ==========================================================================
    9. Post Cards (list view)
@@ -1442,6 +1445,122 @@ body.nav-open { overflow: hidden; }
 .post-updated { display: inline-flex; align-items: center; gap: 4px; font-size: 0.72rem; color: var(--text-muted); font-style: italic; }
 
 /* ==========================================================================
+   Works Page
+   ========================================================================== */
+
+.works-card {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+.works-card:last-child { border-bottom: none; }
+
+.works-card-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.works-card-title {
+  font-family: 'Literata', Georgia, serif;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin: 0;
+}
+
+.works-card-links {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.works-card-links a {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.works-card-links a:hover { color: var(--link); }
+
+.works-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.works-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.works-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.works-card-meta i {
+  margin-right: 3px;
+  font-size: 0.6875rem;
+}
+
+.works-conferences {
+  list-style: none !important;
+  margin: 8px 0 0;
+  padding-left: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.works-conference-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.works-conference-name {
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.works-conference-name i {
+  margin-right: 3px;
+  font-size: 0.6875rem;
+}
+
+.works-conference-month {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.works-conference-links {
+  display: flex;
+  gap: 8px;
+}
+
+.works-conference-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.works-conference-links a:hover { color: var(--link); }
+
+/* ==========================================================================
    21. Responsive — Tablet
    ========================================================================== */
 
@@ -1454,7 +1573,7 @@ body.nav-open { overflow: hidden; }
 @media (max-width: 1024px) {
   .header-nav { display: none; }
   .hamburger { display: flex; }
-  .main-content { padding: 24px 20px; }
+  .main-content { padding: 24px 20px; grid-column: 1; }
   .layout { grid-template-columns: 1fr; }
   .header-inner { padding: 12px 20px; max-width: none; }
   .footer-inner { padding: 16px 20px; max-width: none; }
@@ -1472,11 +1591,11 @@ body.nav-open { overflow: hidden; }
   .footer-psf-img { width: 96px; }
   .footer-psf { opacity: 0.7; }
   .footer-license { order: 3; }
-  .main-content { padding: 20px 16px; }
+  .main-content { padding: 20px 16px; grid-column: 1; }
   .post-nav { flex-direction: column; }
   .post-nav-next { text-align: left; }
   .post-title { font-size: 1.375rem; }
-  .section-tab { padding: 0 0 6px; margin-right: 14px; font-size: 0.75rem; }
+  .section-tab { padding: 6px 12px; font-size: 0.75rem; }
   .post-content h2 { font-size: 1.2rem; }
   .post-content h3 { font-size: 1rem; }
   pre[class*="language-"] { font-size: 0.78rem; padding: 14px; }
@@ -1487,4 +1606,10 @@ body.nav-open { overflow: hidden; }
   .search-overlay-inner { margin: 0 16px; border-radius: 8px; }
   .post-card { padding: 14px 0; }
   .mobile-menu { width: 260px; }
+  .tags-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 6px; }
+  .tag-card { padding: 10px 8px; gap: 4px; }
+  .tag-card-name { font-size: 0.75rem; }
+  .tag-card-count { font-size: 0.625rem; }
+  .works-conference-item { flex-wrap: wrap; gap: 4px 10px; }
+  .works-conference-month { margin-left: 0; }
 }

@@ -1,0 +1,181 @@
+{
+  "projects": [
+    {
+      "name": "Shell themed Portfolio site: https://adarshd.dev",
+      "description": "Python shell/REPL themed portfolio website. Built using Pyscript and Python InteractiveInterpreter to execute client side Python.",
+      "tags": [
+        "python",
+        "open-source"
+      ],
+      "github": "https://github.com/adarshdigievo/Portfolio-REPL",
+      "url": "https://adarshd.dev"
+    },
+    {
+      "name": "Personal blog: blog.adarshd.dev",
+      "description": "Blog was initially built using Jekyll and later migrated to eleventy",
+      "tags": [
+        "blog"
+      ],
+      "github": "https://github.com/adarshdigievo/blog",
+      "url": "https://blog.adarshd.dev"
+    },
+    {
+      "name": "Let Me ChatGPT that for you",
+      "description": "Clone of LMGTFY (Let Me Google That For You) but for ChatGPT",
+      "tags": [
+        "fun"
+      ],
+      "github": "",
+      "url": "https://lmctfy.adarshd.dev/"
+    },
+    {
+      "name": "Pyzlides",
+      "description": "Presentation creator using Python code. Vibe coded with Jetbrains Junie",
+      "tags": [
+        "alpha",
+        "python"
+      ],
+      "github": "https://github.com/adarshdigievo/pyzlides",
+      "url": ""
+    },
+    {
+      "name": "Just Grok It",
+      "description": " Migrate your current LLM API requests to xAI APIs with a single line of code.",
+      "tags": [
+        "alpha",
+        "python",
+        "package"
+      ],
+      "github": "https://github.com/adarshdigievo/just-grok-it",
+      "url": ""
+    }
+  ],
+  "talks": [
+    {
+      "title": "Building Federated GraphQL APIs in Python",
+      "description": "Demo of building Federated GraphQL APIs in Python using Apollo Federation and Graphene.",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/GraphQL%20Summit%2022%20-%20Federated%20GraphQL%20APIs%20in%20Python",
+      "conferences": [
+        {
+          "name": "GraphQL Summit 2022",
+          "month": "October 2022",
+          "url": "https://www.apollographql.com/events/building-federated-graphql-apis-in-python",
+          "youtube": ""
+        },
+        {
+          "name": "Flaskcon 2023",
+          "month": "December 2023",
+          "url": "",
+          "youtube": "https://www.youtube.com/watch?v=1ASIq1GX8cw"
+        }
+      ],
+      "coSpeakers": []
+    },
+    {
+      "title": "Metaprogramming in Python using Metaclasses",
+      "description": "An introduction to metaprogramming in Python using metaclasses, with examples and use cases. Covered the `type` in Python, class creation internals, and the modern alternatives to metaclasses.",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Pycascades%2023%20-%20Metaprogramming",
+      "conferences": [
+        {
+          "name": "Pycascades 2023",
+          "month": "March 2023",
+          "url": "https://2023.pycascades.com/program/talks/metaprogramming-in-python-using-metaclasses/",
+          "youtube": "https://www.youtube.com/watch?v=-js0K7Q878c"
+        }
+      ],
+      "coSpeakers": [
+        "Aby M Joseph"
+      ]
+    },
+    {
+      "title": "Pygoat - Learn Django Security the hard way",
+      "description": "Pygoat is an open-source project that provides a vulnerable Django application for learning and practicing web application security. The session covered OWASP top 10 vulnerabilities in Django applications, with live demos using Pygoat.",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Djangocon%20US%2024%20-%20Pygoat%20-%20Django%20Security",
+      "conferences": [
+        {
+          "name": "Europython 2023",
+          "month": "September 2023",
+          "url": "",
+          "youtube": "https://www.youtube.com/watch?v=ZtG8UCoDAg0"
+        },
+        {
+          "name": "Djangocon US 2024",
+          "month": "December 2024",
+          "url": "https://2024.djangocon.us/talks/pygoat-learn-django-security-the-hard-way/",
+          "youtube": "https://www.youtube.com/watch?v=rcms2_bTMrY"
+        }
+      ],
+      "coSpeakers": [
+        "Thameem Karakkoth"
+      ]
+    },
+    {
+      "title": "Everything is an object in Python",
+      "description": "Explored Python object model and how everything in Python is an object, including functions, classes, modules, and even types.",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Trivandrum%20Python%20Community%20Meetups/Feb%2024%20-%20Everything%20is%20an%20object",
+      "conferences": [
+        {
+          "name": "Pycon US 2025",
+          "month": "February 2024",
+          "url": "",
+          "youtube": ""
+        }
+      ],
+      "coSpeakers": []
+    },
+    {
+      "title": "Tackling Thread Safety in Python",
+      "description": "Explored the concept of race conditions, how Python’s GIL currently affects multithreading and covered steps to fix thread unsafe code using synchronization primitives.",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Piterpy%2024%20-%20Thread%20Safety",
+      "conferences": [
+        {
+          "name": "Europython 2024",
+          "month": "July 2024",
+          "url": "https://ep2024.europython.eu/session/tackling-thread-safety-in-python/",
+          "youtube": "https://www.youtube.com/watch?v=RO1PUe5UeXM"
+        },
+        {
+          "name": "Piterpy 2024",
+          "month": "October 2024",
+          "url": "https://piterpy.com/en/archive/2024/persons/ab66c134fd1149e09d067fc71487e802/",
+          "youtube": "https://www.youtube.com/watch?v=jtp8BsB__vg"
+        }
+      ],
+      "coSpeakers": []
+    },
+    {
+      "title": "Goodbye GIL: Exploring the Free-threaded mode in Python",
+      "description": "The session explores the free-threaded mode of CPython 3.13+. We demo and assess the impact on single-threaded vs multithreaded code and test the performance across CPU-bound and I/O-bound tasks, aiming to identify scenarios where free-threaded Python excels.",
+      "github": "https://github.com/adarshdigievo/pycon_jp_goodbye_gil_talk",
+      "conferences": [
+        {
+          "name": "Pycascades 2025",
+          "month": "March 2025",
+          "url": "https://2025.pycascades.com/program/talks/goodbye-gil/",
+          "youtube": ""
+        },
+        {
+          "name": "Pycon JP 2025",
+          "month": "October 2024",
+          "url": "https://2025.pycon.jp/ja/timetable/talk/KLCT8T",
+          "youtube": "https://www.youtube.com/watch?v=Qa41zUOzZaU"
+        }
+      ],
+      "coSpeakers": []
+    },
+    {
+      "title": "Improving in Chess using Python ",
+      "description": "Chess game analysis and evaluation using Python `chess` library and Stockfish engine.",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Pycon%20US%2025%20-%20Improving%20in%20Chess",
+      "conferences": [
+        {
+          "name": "Pycon US 2025",
+          "month": "May 2025",
+          "url": "https://us.pycon.org/2025/speaker/profile/122/",
+          "youtube": ""
+        }
+      ],
+      "coSpeakers": []
+    }
+  ]
+}

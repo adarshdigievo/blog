@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+title: Works
+permalink: /works/
+---
+
+<article class="page">
+  <header class="page-header">
+    <h1 class="page-title">Works</h1>
+  </header>
+  <div class="page-content">
+
+    <div class="section-tabs works-tabs">
+      <button class="section-tab active" data-works-tab="projects">Projects</button>
+      <button class="section-tab" data-works-tab="talks">Talks</button>
+    </div>
+
+    {# ── Projects Tab ── #}
+    <div class="works-panel" id="works-projects">
+      {% for project in works.projects %}
+      <div class="works-card">
+        <div class="works-card-header">
+          <h2 class="works-card-title">{{ project.name }}</h2>
+          <div class="works-card-links">
+            {% if project.github %}
+            <a href="{{ project.github }}" target="_blank" rel="noopener" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            {% endif %}
+            {% if project.url %}
+            <a href="{{ project.url }}" target="_blank" rel="noopener" title="Visit">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <p class="works-card-desc">{{ project.description }}</p>
+        {% if project.tags.length > 0 %}
+        <div class="works-card-tags">
+          {% for tag in project.tags %}
+          <span class="tag-pill small">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {# ── Talks Tab ── #}
+    <div class="works-panel" id="works-talks" hidden>
+      {% for talk in works.talks %}
+      <div class="works-card">
+        <div class="works-card-header">
+          <h2 class="works-card-title">{{ talk.title }}</h2>
+          <div class="works-card-links">
+            {% if talk.github %}
+            <a href="{{ talk.github }}" target="_blank" rel="noopener" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        <p class="works-card-desc">{{ talk.description }}</p>
+        {% if talk.coSpeakers.length > 0 %}
+        <div class="works-card-meta">
+          <span class="works-card-speakers">
+            <i class="fa-solid fa-users"></i> {{ talk.coSpeakers | join(", ") }}
+          </span>
+        </div>
+        {% endif %}
+        <ul class="works-conferences">
+          {% for conf in talk.conferences %}
+          <li class="works-conference-item">
+            <span class="works-conference-name">
+              <i class="fa-solid fa-microphone-lines"></i> {{ conf.name }}
+            </span>
+            <span class="works-conference-month">{{ conf.month }}</span>
+            <span class="works-conference-links">
+              {% if conf.url %}
+              <a href="{{ conf.url }}" target="_blank" rel="noopener" title="Conference site">
+                <i class="fa-solid fa-globe"></i>
+              </a>
+              {% endif %}
+              {% if conf.youtube %}
+              <a href="{{ conf.youtube }}" target="_blank" rel="noopener" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              {% endif %}
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</article>

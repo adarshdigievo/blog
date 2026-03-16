@@ -1,33 +1,10 @@
 ---
-layout: layouts/base.njk
-title: Categories
+layout: false
 permalink: /categories/
+eleventyExcludeFromCollections: true
 ---
-
-<article class="page">
-  <header class="page-header">
-    <h1 class="page-title">Categories</h1>
-  </header>
-  <div class="page-content">
-    <div class="category-tree">
-      {% set catMap = collections.categoryMap %}
-      {% for catName, posts in catMap %}
-      <div class="category-branch">
-        <a href="/categories/{{ catName }}/" class="category-branch-header">
-          <i class="fa-solid fa-folder"></i>
-          <span class="category-branch-name">{{ catName }}</span>
-          <span class="category-branch-count">{{ posts.length }}</span>
-        </a>
-        <div class="category-branch-posts">
-          {% for post in posts | reverse %}
-          <a href="{{ post.url }}" class="category-branch-post">
-            <span class="category-branch-post-title">{{ post.data.title }}</span>
-            <time class="category-branch-post-date">{{ post.date | readableDate }}</time>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</article>
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="refresh" content="0;url=/explore/#categories"></head>
+<body><a href="/explore/#categories">Redirecting...</a></body>
+</html>

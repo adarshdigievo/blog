@@ -423,5 +423,32 @@
         });
       }
     }
+
+    // === Generic Page Tabs ===
+    function initTabs(tabAttr, panelClass, prefix) {
+      var tabs = document.querySelectorAll("[" + tabAttr + "]");
+      if (tabs.length) {
+        tabs.forEach(function (tab) {
+          tab.addEventListener("click", function () {
+            tabs.forEach(function (t) { t.classList.remove("active"); });
+            tab.classList.add("active");
+            var target = tab.getAttribute(tabAttr);
+            document.querySelectorAll("." + panelClass).forEach(function (panel) {
+              panel.hidden = panel.id !== prefix + target;
+            });
+          });
+        });
+      }
+    }
+    initTabs("data-works-tab", "works-panel", "works-");
+    initTabs("data-explore-tab", "explore-panel", "explore-");
+
+    // Activate tab from URL hash (e.g. /explore/#tags)
+    var hash = window.location.hash.replace("#", "");
+    if (hash) {
+      var hashTab = document.querySelector("[data-explore-tab='" + hash + "']") ||
+                    document.querySelector("[data-works-tab='" + hash + "']");
+      if (hashTab) hashTab.click();
+    }
   });
 })();
