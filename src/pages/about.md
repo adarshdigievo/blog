@@ -8,12 +8,16 @@ permalink: /about/
 
 ## About Me
 
-Hi, I'm Adarsh Divakaran👋
+Hi, I'm Adarsh Divakaran 👋
 
-I'm currently building [Lexoga](https://lexoga.com) — a platform reimagining how people connect with high-leverage work in the AI era. It's part of our parent company, [Digievo Labs](https://digievolabs.com), where we explore bold ideas in tech and the future of work.
+I am a Python Developer Advocate at [SerpApi](https://serpapi.com).
+
+Previously, I worked at xAI in the human data team, helping **Grok** write better Python. Before that, I co-founded [Lexoga](https://lexoga.com) — a platform reimagining how people connect with high-leverage work in the AI era. It's part of our parent company, [Digievo Labs](https://digievolabs.com), where we explore bold ideas in tech and the future of work.
 
 My core tech expertise is in Python and backend development. I love designing systems, writing clean APIs, and working behind the scenes to make things run fast and reliably.
 
-I'm also a speaker at global Python conferences like **PyCon US**, **EuroPython**, **DjangoCon US**, **PyCascades**, and **PiterPy**. You can find all my talk resources in [this GitHub repo](https://github.com/adarshdigievo/talks).
+I'm also a speaker at global Python conferences like **PyCon US**, **EuroPython**, **DjangoCon US**, **PyCascades**, and **PiterPy**. You can find all my talk resources in [this GitHub repo](https://github.com/adarshdigievo/talks). Last year, I have been offered Microsoft MVP award in Python for my contributions to the Python ecosystem.
+
+During my free-time I co-organize [Trivandrum Python Community](https://trivandrumpython.github.io/) events and run [Deep Dive Python](https://luma.com/tripy) online sessions.
 
 Let's connect on [LinkedIn](https://www.linkedin.com/in/adarsh-d) 🤝
