@@ -48,7 +48,7 @@ permalink: /works/
 
     {# ── Talks Tab ── #}
     <div class="works-panel" id="works-talks" hidden>
-      {% for talk in works.talks %}
+      {% for talk in works.talks | sortTalksByLatest %}
       <div class="works-card">
         <div class="works-card-header">
           <h2 class="works-card-title">{{ talk.title }}</h2>

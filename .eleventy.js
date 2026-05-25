@@ -192,6 +192,14 @@ module.exports = function (eleventyConfig) {
       .replace(/-+/g, "-");
   });
 
+  eleventyConfig.addFilter("sortTalksByLatest", (talks) => {
+    return [...talks].sort((a, b) => {
+      const latestDate = (talk) =>
+        Math.max(...talk.conferences.map((c) => new Date(c.month).getTime()));
+      return latestDate(b) - latestDate(a);
+    });
+  });
+
   eleventyConfig.addFilter("size", (arr) => {
     if (!arr) return 0;
     return arr.length || 0;

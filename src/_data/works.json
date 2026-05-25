@@ -48,6 +48,17 @@
       ],
       "github": "https://github.com/adarshdigievo/just-grok-it",
       "url": ""
+    },
+    {
+      "name": "BabyAgent",
+      "description": "Demo AI Agent SDK with support for OpenAI, Ollama, and Anthropic with support for tool calling, MCP, and SKILL.md",
+      "tags": [
+        "alpha",
+        "python",
+        "package"
+      ],
+      "github": "https://github.com/serpapi/babyagent",
+      "url": ""
     }
   ],
   "talks": [
@@ -156,7 +167,7 @@
         },
         {
           "name": "Pycon JP 2025",
-          "month": "October 2024",
+          "month": "October 2025",
           "url": "https://2025.pycon.jp/ja/timetable/talk/KLCT8T",
           "youtube": "https://www.youtube.com/watch?v=Qa41zUOzZaU"
         }
@@ -172,6 +183,34 @@
           "name": "Pycon US 2025",
           "month": "May 2025",
           "url": "https://us.pycon.org/2025/speaker/profile/122/",
+          "youtube": ""
+        }
+      ],
+      "coSpeakers": []
+    },
+    {
+      "title": "Building Agents using Copilot SDK",
+      "description": "Intro to AI agents and demo of building one using the GitHub Copilot Python SDK",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Github%20Copilot%20Dev%20Days%20Trivandrum%20-%20Building%20Agents%20using%20Copilot%20SDK",
+      "conferences": [
+        {
+          "name": "GitHub Copilot Devdays | Trivandrum",
+          "month": "April 2026",
+          "url": "https://trivandrumpython.github.io/events/copilot-dev-days/",
+          "youtube": ""
+        }
+      ],
+      "coSpeakers": []
+    },
+    {
+      "title": "Inside an AI Agent SDK: Building One from Scratch in Python",
+      "description": "Building an AI agent SDK in Python from scratch with support for different LLM providers, tool calling, MCP, SKILL.md, etc",
+      "github": "https://github.com/adarshdigievo/talks/tree/main/Pycon%20US%2026%20-%20Inside%20an%20AI%20Agent%20SDK",
+      "conferences": [
+        {
+          "name": "Pycon US 2026",
+          "month": "May 2026",
+          "url": "https://us.pycon.org/2026/schedule/presentation/164/",
           "youtube": ""
         }
       ],
