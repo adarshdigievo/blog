@@ -18,11 +18,13 @@
   function setTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem(STORAGE_KEY, theme);
-    var btn = document.querySelector(".theme-toggle");
-    if (btn) {
-      btn.querySelector("i").className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+    document.querySelectorAll(".theme-toggle").forEach(function (btn) {
+      var icon = btn.querySelector("i");
+      if (icon) {
+        icon.className = theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+      }
       btn.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
-    }
+    });
     if (typeof DISQUS !== "undefined") {
       DISQUS.reset({ reload: true });
     }
@@ -46,17 +48,14 @@
       localStorage.setItem(FONT_SIZE_KEY, String(nextSize));
     }
 
-    var decreaseBtn = document.querySelector(".font-size-decrease");
-    var increaseBtn = document.querySelector(".font-size-increase");
-
-    if (decreaseBtn) {
+    document.querySelectorAll(".font-size-decrease").forEach(function (decreaseBtn) {
       decreaseBtn.disabled = nextSize <= MIN_FONT_SIZE;
       decreaseBtn.setAttribute("aria-disabled", String(decreaseBtn.disabled));
-    }
-    if (increaseBtn) {
+    });
+    document.querySelectorAll(".font-size-increase").forEach(function (increaseBtn) {
       increaseBtn.disabled = nextSize >= MAX_FONT_SIZE;
       increaseBtn.setAttribute("aria-disabled", String(increaseBtn.disabled));
-    }
+    });
   }
 
   setTheme(getThemePreference());
@@ -64,30 +63,26 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     // Theme toggle click
-    var toggleBtn = document.querySelector(".theme-toggle");
-    if (toggleBtn) {
+    document.querySelectorAll(".theme-toggle").forEach(function (toggleBtn) {
       toggleBtn.addEventListener("click", function () {
         var current = document.documentElement.getAttribute("data-theme") || getThemePreference();
         setTheme(current === "dark" ? "light" : "dark");
       });
-    }
+    });
 
     // Font size controls
-    var decreaseFontBtn = document.querySelector(".font-size-decrease");
-    var increaseFontBtn = document.querySelector(".font-size-increase");
-
     applyPostFontSize(getStoredPostFontSize(), false);
 
-    if (decreaseFontBtn) {
+    document.querySelectorAll(".font-size-decrease").forEach(function (decreaseFontBtn) {
       decreaseFontBtn.addEventListener("click", function () {
         applyPostFontSize(getStoredPostFontSize() - FONT_SIZE_STEP, true);
       });
-    }
-    if (increaseFontBtn) {
+    });
+    document.querySelectorAll(".font-size-increase").forEach(function (increaseFontBtn) {
       increaseFontBtn.addEventListener("click", function () {
         applyPostFontSize(getStoredPostFontSize() + FONT_SIZE_STEP, true);
       });
-    }
+    });
 
     // === Mobile Menu ===
     var hamburger = document.querySelector(".hamburger");
@@ -112,7 +107,6 @@
     if (mobileClose) mobileClose.addEventListener("click", closeMobileMenu);
 
     // === Search Overlay ===
-    var searchBtn = document.querySelector(".header-search-btn");
     var searchOverlay = document.querySelector(".search-overlay");
     var searchInput = document.getElementById("search-input");
     var searchResults = document.getElementById("search-results");
@@ -133,7 +127,14 @@
       if (postList) postList.style.display = "";
     }
 
-    if (searchBtn) searchBtn.addEventListener("click", openSearch);
+    document.querySelectorAll(".header-search-btn").forEach(function (searchBtn) {
+      searchBtn.addEventListener("click", function () {
+        if (mobileMenu && mobileMenu.classList.contains("open")) {
+          closeMobileMenu();
+        }
+        openSearch();
+      });
+    });
 
     // Close search on overlay click (but not inner)
     if (searchOverlay) {
