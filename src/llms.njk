@@ -1,0 +1,40 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.title }}
+
+> {{ site.description }}, focused on Python, AI, programming, and personal writing.
+
+This file is a concise guide for language models and agents looking for the most useful resources on {{ site.url }}.
+
+## Useful Pages
+
+- [Home]({{ site.url }}/): Latest posts across all sections.
+- [About]({{ site.url }}/about/): Author profile and background.
+- [Python]({{ site.url }}/python/): Python articles and tutorials.
+- [AI]({{ site.url }}/ai/): AI posts and experiments.
+- [Personal]({{ site.url }}/personal/): Personal posts.
+- [Works]({{ site.url }}/works/): Projects, talks, and other work.
+- [Archives]({{ site.url }}/archives/): Chronological archive of posts.
+- [Tags]({{ site.url }}/tags/): Topic index.
+- [Sitemap]({{ site.url }}/sitemap.xml): XML sitemap.
+
+## Feeds
+
+- [All posts feed]({{ site.url }}/feed/all.xml): Atom feed for every section.
+- [Python feed]({{ site.url }}/feed.xml): Atom feed for Python posts.
+- [AI feed]({{ site.url }}/ai/feed.xml): Atom feed for AI posts.
+- [Personal feed]({{ site.url }}/personal/feed.xml): Atom feed for personal posts.
+
+## Recent Posts
+
+{% for post in collections.allPosts | head(12) %}
+- [{{ post.data.title | safe }}]({{ site.url }}{{ post.url }}): {{ post.data.autoExcerpt | default(site.description) | safe }}
+{% endfor %}
+
+## Content Notes
+
+- Primary topics: Python, AI, programming, software development, and personal writing.
+- Use the canonical page URL when citing posts from this site.
+- Respect robots.txt and feed metadata when crawling.
