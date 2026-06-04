@@ -16,7 +16,11 @@
 <meta name="robots" content="{{ robots if robots else 'index, follow' }}">
 
 {# Canonical URL #}
-<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% set canonicalHref = site.url ~ page.url %}
+{% if canonicalUrl or canonical_url %}
+{% set canonicalHref = canonicalUrl or canonical_url %}
+{% endif %}
+<link rel="canonical" href="{{ canonicalHref }}">
 
 {# Pagination rel links #}
 {% if pagination and pagination.href.previous %}
@@ -29,7 +33,7 @@
 {# Open Graph #}
 <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
 <meta property="og:description" content="{{ metaDesc }}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:url" content="{{ canonicalHref }}">
 <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
 {% if image %}
 <meta property="og:image" content="{{ site.url }}{{ image }}">
@@ -71,7 +75,7 @@
     "name": "{{ site.author.name }}"
   },
   "description": "{{ metaDesc | replace('"', '&quot;') }}",
-  "url": "{{ site.url }}{{ page.url }}",
+  "url": "{{ canonicalHref }}",
   "publisher": {
     "@type": "Person",
     "name": "{{ site.author.name }}",
@@ -108,6 +112,13 @@
 
 {# RSS Feed Autodiscovery #}
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — All Posts" href="{{ site.url }}{% if feedUrl %}{{ feedUrl }}{% else %}/feed/all.xml{% endif %}">
+{% if page.url == "/" %}
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Python" href="{{ site.url }}/feed.xml">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} — AI" href="{{ site.url }}/ai/feed.xml">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} — Personal" href="{{ site.url }}/personal/feed.xml">
+<link rel="author" href="{{ site.url }}/about/">
+<link rel="describedby" type="text/plain" href="{{ site.url }}/llms.txt">
+{% endif %}
 
 {# Google Analytics #}
 {% if site.google_analytics %}

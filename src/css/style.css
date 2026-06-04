@@ -864,6 +864,8 @@ body.sidebar-hidden .sidebar-show-toggle { display: flex; }
 
 .separator { color: var(--text-faint); }
 .separator::before { content: "\00b7"; }
+.post-canonical-link { color: var(--link); text-decoration: none; }
+.post-canonical-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Post content */
 .post-content {

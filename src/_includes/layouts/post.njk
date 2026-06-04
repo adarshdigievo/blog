@@ -32,6 +32,10 @@ rightSidebar: post
       <span class="separator">·</span>
       <span>Updated {{ lastModified | readableDate }}</span>
       {% endif %}
+      {% if canonicalUrl or canonical_url %}
+      <span class="separator">·</span>
+      <a href="{{ canonicalUrl or canonical_url }}" class="post-canonical-link" target="_blank" rel="canonical noopener">Originally published</a>
+      {% endif %}
     </div>
   </header>
 

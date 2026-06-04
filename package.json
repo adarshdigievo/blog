@@ -6,6 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "build": "eleventy",
+    "test": "node --test --test-concurrency=1",
     "serve": "eleventy --serve",
     "clean": "rm -rf _site"
   },
