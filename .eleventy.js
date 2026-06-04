@@ -166,6 +166,14 @@ module.exports = function (eleventyConfig) {
     return minutes + " min read";
   });
 
+  eleventyConfig.addFilter("domainName", (url) => {
+    try {
+      return new URL(url).hostname.replace(/^www\./, "");
+    } catch (_) {
+      return url || "";
+    }
+  });
+
   eleventyConfig.addFilter("head", (array, n) => {
     if (!Array.isArray(array)) return [];
     return n < 0 ? array.slice(n) : array.slice(0, n);

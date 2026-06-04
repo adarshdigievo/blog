@@ -13,6 +13,17 @@
       <button class="header-search-btn" aria-label="Search">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
+      {% if rightSidebar == "post" %}
+      <div class="font-size-controls" aria-label="Post font size controls">
+        <button class="font-size-btn font-size-decrease" aria-label="Decrease font size">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <span class="font-size-label" aria-hidden="true">Aa</span>
+        <button class="font-size-btn font-size-increase" aria-label="Increase font size">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
+      {% endif %}
       <button class="theme-toggle" aria-label="Toggle theme">
         <i class="fa-solid fa-moon"></i>
       </button>

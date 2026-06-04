@@ -3,6 +3,11 @@
 
   // === Theme Toggle ===
   var STORAGE_KEY = "theme-preference";
+  var FONT_SIZE_KEY = "post-font-size";
+  var MIN_FONT_SIZE = 90;
+  var MAX_FONT_SIZE = 140;
+  var DEFAULT_FONT_SIZE = 100;
+  var FONT_SIZE_STEP = 5;
 
   function getThemePreference() {
     var stored = localStorage.getItem(STORAGE_KEY);
@@ -23,7 +28,39 @@
     }
   }
 
+  function clampFontSize(size) {
+    return Math.min(MAX_FONT_SIZE, Math.max(MIN_FONT_SIZE, size));
+  }
+
+  function getStoredPostFontSize() {
+    var stored = parseInt(localStorage.getItem(FONT_SIZE_KEY), 10);
+    return Number.isNaN(stored) ? DEFAULT_FONT_SIZE : clampFontSize(stored);
+  }
+
+  function applyPostFontSize(size, persist) {
+    var nextSize = clampFontSize(size);
+    document.documentElement.style.setProperty("--post-font-scale", nextSize / 100);
+    document.documentElement.setAttribute("data-post-font-size", String(nextSize));
+
+    if (persist) {
+      localStorage.setItem(FONT_SIZE_KEY, String(nextSize));
+    }
+
+    var decreaseBtn = document.querySelector(".font-size-decrease");
+    var increaseBtn = document.querySelector(".font-size-increase");
+
+    if (decreaseBtn) {
+      decreaseBtn.disabled = nextSize <= MIN_FONT_SIZE;
+      decreaseBtn.setAttribute("aria-disabled", String(decreaseBtn.disabled));
+    }
+    if (increaseBtn) {
+      increaseBtn.disabled = nextSize >= MAX_FONT_SIZE;
+      increaseBtn.setAttribute("aria-disabled", String(increaseBtn.disabled));
+    }
+  }
+
   setTheme(getThemePreference());
+  applyPostFontSize(getStoredPostFontSize(), false);
 
   document.addEventListener("DOMContentLoaded", function () {
     // Theme toggle click
@@ -32,6 +69,23 @@
       toggleBtn.addEventListener("click", function () {
         var current = document.documentElement.getAttribute("data-theme") || getThemePreference();
         setTheme(current === "dark" ? "light" : "dark");
+      });
+    }
+
+    // Font size controls
+    var decreaseFontBtn = document.querySelector(".font-size-decrease");
+    var increaseFontBtn = document.querySelector(".font-size-increase");
+
+    applyPostFontSize(getStoredPostFontSize(), false);
+
+    if (decreaseFontBtn) {
+      decreaseFontBtn.addEventListener("click", function () {
+        applyPostFontSize(getStoredPostFontSize() - FONT_SIZE_STEP, true);
+      });
+    }
+    if (increaseFontBtn) {
+      increaseFontBtn.addEventListener("click", function () {
+        applyPostFontSize(getStoredPostFontSize() + FONT_SIZE_STEP, true);
       });
     }
 
