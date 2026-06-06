@@ -10,17 +10,6 @@
       </a>
     </div>
     <div class="aside-section">
-      <h3 class="aside-heading">Tags</h3>
-      <div class="tag-cloud">
-        {% for tag in collections.tagList %}
-          {% set tagCount = collections[tag].length if collections[tag] else 0 %}
-          {% if tagCount > 0 %}
-          <a href="/tags/{{ tag | slugify }}/" class="tag-pill">{{ tag }} <span class="tag-count">{{ tagCount }}</span></a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-    <div class="aside-section">
       <h3 class="aside-heading">Sections</h3>
       <div class="sections-nav">
         {% set pyCount = collections.sectionPython | size %}
@@ -49,6 +38,17 @@
     <div class="aside-section">
       <h3 class="aside-heading">Subscribe</h3>
       <a href="/feed/all.xml" class="subscribe-link"><i class="fa-solid fa-rss"></i> All posts feed</a>
+    </div>
+    <div class="aside-section">
+      <h3 class="aside-heading">Tags</h3>
+      <div class="tag-cloud">
+        {% for tag in collections.tagList %}
+          {% set tagCount = collections[tag].length if collections[tag] else 0 %}
+          {% if tagCount > 0 %}
+          <a href="/tags/{{ tag | slugify }}/" class="tag-pill">{{ tag }} <span class="tag-count">{{ tagCount }}</span></a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </aside>
