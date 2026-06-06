@@ -1,0 +1,336 @@
+---
+layout: layouts/base.njk
+title: AI Use
+description: How I use AI for writing, site metadata, and my timeline of working with AI tools.
+permalink: /ai-use/
+rightSidebar: tags
+---
+
+<article class="ai-journey">
+  <div class="ai-use-layout">
+    <nav class="ai-use-tabs" aria-label="AI use page sections">
+      <a href="#ai-timeline" class="active" data-ai-use-tab="ai-timeline">AI timeline</a>
+      <a href="#ai-disclaimer" data-ai-use-tab="ai-disclaimer">AI use disclaimer</a>
+      <a href="#ai-features" data-ai-use-tab="ai-features">Features for AI</a>
+    </nav>
+
+    <div class="ai-use-main">
+      <section id="ai-timeline" class="ai-use-section ai-use-panel">
+        <header class="ai-journey-hero">
+          <p class="ai-journey-kicker">AI timeline</p>
+          <h1>My journey with AI</h1>
+        </header>
+
+        <ol class="ai-timeline" aria-label="Journey with AI timeline">
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Sep</span>
+              <strong>2021</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-key"></i></div>
+            <section class="ai-timeline-card">
+              <h2>OpenAI API beta (pre-ChatGPT)</h2>
+              <figure class="ai-timeline-image">
+                <img src="/assets/img/ai-use/openai_api_access.png" alt="OpenAI API beta screenshot">
+              </figure>
+              <p>I came across this email from OpenAI when I was searching for the ChatGPT welcome email. This was more than 1 year before ChatGPT was released.</p>
+              <p>I was surprised to see that they had a product named Codex back then. This was confirmed by <a href="https://web.archive.org/web/20210914190322/https://openai.com/">Archive.org capture of openai.com</a></p>
+              <p>I have no idea what I did with the API access. I have a faint memory of playing around in the API playground page, but do not remember any details.</p>
+
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Jul</span>
+              <strong>2022</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-code"></i></div>
+            <section class="ai-timeline-card">
+              <h2>AWS CodeWhisperer preview</h2>
+              <figure class="ai-timeline-image">
+                <img src="/assets/img/ai-use/codewhisperer.png" alt="chat screenshot">
+              </figure>
+              <p>Tried AWS CodeWhisperer. Posted a demo video on team WhatsApp group showing the tool generating code based on comments.</p>
+              <p>Also had a faint memory about trying GitHub copilot. But I am not sure and it might actually be the CodeWhisperer usage. Also, remember a few community backlashes against GitHub using code for training around the time.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Dec</span>
+              <strong>2022</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-comments"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Tried ChatGPT 1 Month after the launch</h2>
+                <figure class="ai-timeline-image">
+                <img src="/assets/img/ai-use/chatgpt_first_chat.png" alt="Chatgpt screenshot">
+              </figure>
+              <p>First chat: I was working with GraphQL at that time, so tested ChatGPT with a GraphQL question.</p>
+
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Jul</span>
+              <strong>2023</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-message"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Tried Anthropic Claude</h2>
+              <p>Tracked this from the Welcome email from Anthropic.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Oct</span>
+              <strong>2024</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-pen-ruler"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Cursor - First coding IDE</h2>
+              <p>Tried Cursor for the first time to avoid back and forth copy pastes with ChatGPT</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Nov</span>
+              <strong>2024</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-wind"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Codeium Windsurf</h2>
+              <p>Loved Windsurf on the first try. Cancelled Cursor, and moved to Windsurf Pro.</p>
+              <p>Used Windsurf + Claude Sonnet 3.5 to build LinkHQ.co - the startup I co-founded. Most CRUD operations were agentic coded.</p>
+              <p>Used https://gitingest.com/ to provide context to models when using a less popular library (e.g. Indian payment gateway SDKs).</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Feb</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-user-shield"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Role at Mercor as a contractor</h2>
+              <p>Worked as a contractor of a top AI Lab: Got access to an unreleased cloud coding agent from that AI lab.
+              Was part of the initial team that created challenging coding problems that need to be unsolvable by the model (for RLHF).
+              Cannot disclose the lab and coding agent name due to NDA.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Mar</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-laptop-code"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Installed Ollama and LM Studio</h2>
+              <p>Tested local models. Remember testing qwen-2.5-coder.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Apr-May</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-diagram-project"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Agno</h2>
+              <p>Built simple agents using <a href="https://github.com/agno-agi/agno" target="_blank" rel="noopener">Agno</a>. Explored using local models too (via Ollama's OpenAI compatibile API), but could not get tool use to work with local models.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>July</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-chart-line"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Junie - JetBrains coding agent</h2>
+              <p> Tried Junie on PyCharm and wrote about it<a href="https://blog.adarshd.dev/posts/vibe-coding-with-jetbrains-junie/" target="_blank" rel="noopener">here</a></p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Sep</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-chart-line"></i></div>
+            <section class="ai-timeline-card">
+              <h2>xAI Human Data team</h2>
+              <p>Joined xAI's human data team (coding RLHF). Worked with pre-release versions of Grok and evaluated model performance by giving it a range of coding tasks in Python. Used many different coding IDEs, CLIs, VSCode extensions</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Oct</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-server"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Built sample MCP servers</h2>
+              <p>Built them to test coding model capabilities while at xAI.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Nov</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-satellite-dish"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Google Antigravity IDE and Gemini 3 Pro</h2>
+              <p>Tried Google Antigravity IDE and Gemini 3 Pro. Loved the plan mode in the IDE.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Dec</span>
+              <strong>2025</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-palette"></i></div>
+            <section class="ai-timeline-card">
+              <h2>LLMs became surprisingly good at frontend</h2>
+              <p>Noticed this while using Opus 4.5 and the <a href="https://github.com/anthropics/claude-code/blob/main/plugins/frontend-design/skills/frontend-design/SKILL.md">frontend design skill</a>. This was a leap I thought would take much longer.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Jan</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-keyboard"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Started using Grok CLI / Grok Build</h2>
+              <p>Internal testing. Got access to Grok Build while working at xAI - evaluated the harness performance, and tested for errors. The tool was released to public on May 2026.</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Late Jan</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-cloud"></i></div>
+            <section class="ai-timeline-card">
+              <h2>OpenClaw</h2>
+              <p>Installed late Jan, when it was named Moltbot, on an Ubuntu VPS. Did not trust it with my personal accounts.
+              It got a separate email account, a GitHub, and was installed on a remote Ubuntu VPS.</p>
+              <p>First $50 usage per day.</p>
+            </section>
+          </li>
+
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Late Jan</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-cloud"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Created my own OpenClaw Skill</h2>
+              <p> Created "python" openclaw skill:</p>
+              <p> <code>openclaw skills install python</code></p>
+              <p>This was a SKILL.md file packaged for Clawhub with Guidelines to use when writing Python code</p>
+            </section>
+          </li>
+
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Feb 3-4</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-receipt"></i></div>
+            <section class="ai-timeline-card">
+              <h2>First $50 API usage</h2>
+              <p>With OpenClaw started getting $50+ API usage each day on Vercel AI Gateway</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Feb</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-wave-square"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Claude Max plan</h2>
+              <p>Moved from Claude Pro to Max - thanks to OpenClaw</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Mar</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-layer-group"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Tried Paperclip agent orchestration</h2>
+              <p><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener">paperclipai/paperclip</a> -  It was an interesting idea - like Jira, but for Agents.
+              It was satisfying to watch agents working on tasks we assign realtime</p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Mar-Apr</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-network-wired"></i></div>
+            <section class="ai-timeline-card">
+              <h2>Hermes agent</h2>
+              <p>Installed on VPS side by side with OpenClaw. </p>
+            </section>
+          </li>
+
+          <li class="ai-timeline-item">
+            <div class="ai-timeline-date">
+              <span>Apr</span>
+              <strong>2026</strong>
+            </div>
+            <div class="ai-timeline-node"><i class="fa-solid fa-rocket"></i></div>
+            <section class="ai-timeline-card">
+              <h2>ChatGPT Pro and Codex migration</h2>
+              <p>Migrated to Codex from Claude due to subscription usage changes. </p>
+
+            </section>
+          </li>
+        </ol>
+      </section>
+
+      <section id="ai-disclaimer" class="ai-use-section ai-use-note ai-use-panel" hidden>
+        <h2>AI use disclaimer</h2>
+        <p>I use AI as an editing aid. English is not my first language, so I use it to make my writing clearer and smoother.</p>
+        <p>For some posts, I start with rough bullet points and use AI to help connect them into a better flow.</p>
+        <p>No post on this blog is fully or mostly AI-written. The core ideas, examples, and majority of the writing are mine.</p>
+      </section>
+
+      <section id="ai-features" class="ai-use-section ai-use-note ai-use-panel" hidden>
+        <h2>Features for AI</h2>
+        <ul>
+          <li><a href="/llms.txt">llms.txt</a> is available for LLMs and agents.</li>
+          <li><code>Content-Signal: ai-train=yes, search=yes, ai-input=yes</code> is added in <a href="/robots.txt">robots.txt</a>. This follows <a href="https://contentsignals.org/" target="_blank" rel="noopener">Content Signals</a>.</li>
+          <li>RSS feeds are available. RSS was added for Planet Python support, not only for AI, and existed from the start.</li>
+          <li><a href="/sitemap.xml">sitemap.xml</a> and canonical links are available so crawlers can find the canonical page URLs.</li>
+          <li>The home page links to <code>/llms.txt</code> using <code>rel="describedby"</code>.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</article>

@@ -484,7 +484,10 @@
       var tabs = document.querySelectorAll("[" + tabAttr + "]");
       if (tabs.length) {
         tabs.forEach(function (tab) {
-          tab.addEventListener("click", function () {
+          tab.addEventListener("click", function (e) {
+            if (tab.tagName === "A") {
+              e.preventDefault();
+            }
             tabs.forEach(function (t) { t.classList.remove("active"); });
             tab.classList.add("active");
             var target = tab.getAttribute(tabAttr);
@@ -497,12 +500,14 @@
     }
     initTabs("data-works-tab", "works-panel", "works-");
     initTabs("data-explore-tab", "explore-panel", "explore-");
+    initTabs("data-ai-use-tab", "ai-use-panel", "");
 
     // Activate tab from URL hash (e.g. /explore/#tags)
     var hash = window.location.hash.replace("#", "");
     if (hash) {
       var hashTab = document.querySelector("[data-explore-tab='" + hash + "']") ||
-                    document.querySelector("[data-works-tab='" + hash + "']");
+                    document.querySelector("[data-works-tab='" + hash + "']") ||
+                    document.querySelector("[data-ai-use-tab='" + hash + "']");
       if (hashTab) hashTab.click();
     }
   });

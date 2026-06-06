@@ -2,5 +2,6 @@
   { "label": "Home", "url": "/", "icon": "fa-solid fa-house" },
   { "label": "Explore", "url": "/explore/", "icon": "fa-solid fa-compass" },
   { "label": "Works", "url": "/works/", "icon": "fa-solid fa-briefcase" },
+  { "label": "AI Use", "url": "/ai-use/", "icon": "fa-solid fa-robot" },
   { "label": "About", "url": "/about/", "icon": "fa-solid fa-circle-info" }
 ]
