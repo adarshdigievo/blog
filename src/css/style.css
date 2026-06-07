@@ -38,6 +38,7 @@
   --code-border: #e8e4de;
 
   --section-color: #b08830;
+  --section-tab-active-bg: #fff7df;
 
   --callout-info-bg: #edf4fb;
   --callout-info-border: #3b82f6;
@@ -99,6 +100,7 @@
     --code-border: #1a1a18;
 
     --section-color: #8a6a20;
+    --section-tab-active-bg: #1c1708;
 
     --callout-info-bg: rgba(59,130,246,0.06);
     --callout-info-border: #2a4a6a;
@@ -153,6 +155,7 @@
   --code-text: #3a3a3a;
   --code-border: #e8e4de;
   --section-color: #b08830;
+  --section-tab-active-bg: #fff7df;
   --header-bg: #ffffff;
   --header-border: #e8e4de;
   --footer-border: #e8e4de;
@@ -203,6 +206,7 @@
   --code-text: #c8c4bc;
   --code-border: #1a1a18;
   --section-color: #8a6a20;
+  --section-tab-active-bg: #1c1708;
   --header-bg: #0c0c0b;
   --header-border: #1a1a18;
   --footer-border: #1a1a18;
@@ -1316,6 +1320,7 @@ blockquote.prompt-info p:last-child, blockquote.prompt-tip p:last-child, blockqu
 .ai-use-tabs a {
   display: block;
   padding: 8px 16px;
+  border: 1px solid transparent;
   border-radius: calc(var(--radius) - 2px);
   color: var(--text-muted);
   font-size: 0.8125rem;
@@ -1323,7 +1328,7 @@ blockquote.prompt-info p:last-child, blockquote.prompt-tip p:last-child, blockqu
   line-height: 1.35;
   text-decoration: none;
   white-space: nowrap;
-  transition: color var(--transition), background var(--transition), box-shadow var(--transition);
+  transition: color var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
 }
 
 .ai-use-tabs a:hover {
@@ -1333,8 +1338,10 @@ blockquote.prompt-info p:last-child, blockquote.prompt-tip p:last-child, blockqu
 
 .ai-use-tabs a.active {
   color: var(--text);
-  background: var(--bg);
+  background: var(--section-tab-active-bg);
+  border-color: var(--section-color);
   box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  font-weight: 600;
 }
 
 .ai-use-main {
@@ -1403,7 +1410,7 @@ blockquote.prompt-info p:last-child, blockquote.prompt-tip p:last-child, blockqu
   position: absolute;
   top: 2rem;
   bottom: 1.5rem;
-  left: 148px;
+  left: 74px;
   width: 1px;
   background: var(--border);
 }
@@ -1411,8 +1418,8 @@ blockquote.prompt-info p:last-child, blockquote.prompt-tip p:last-child, blockqu
 .ai-timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: 112px 32px minmax(0, 1fr);
-  gap: 16px;
+  grid-template-columns: 48px 32px minmax(0, 1fr);
+  gap: 10px;
   align-items: start;
 }
 
